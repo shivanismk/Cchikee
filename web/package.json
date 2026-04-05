@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-   "build": "ng build --configuration production",
+    "build": "ng build --configuration production",
+    "start": "npx serve -s dist/landing-page -l 10000",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:landing-page": "node dist/landing-page/server/server.mjs"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
