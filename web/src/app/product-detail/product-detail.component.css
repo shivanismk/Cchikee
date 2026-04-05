@@ -1,0 +1,152 @@
+
+/* Product Tabs */
+.product-tabs {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #ecf0f1;
+  padding: 0 2rem;
+}
+
+.nav-tabs .nav-link {
+  border: none; 
+  color: var(--body-color);
+  font-weight: 500;
+  padding: 1.5rem 2rem;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--primary-color);
+  background: none;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.tab-content-wrapper {
+  padding: 2rem;
+}
+.tab-content-wrapper ul li{
+  margin-top: 15px;
+}
+.tab-content-wrapper h4 {
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.tab-content-wrapper table {
+  margin-top: 1rem;
+}
+
+.tab-content-wrapper table td {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.tab-content-wrapper table td:first-child {
+  font-weight: 600;
+  color: var(--secondary-color);
+  width: 30%;
+}
+
+/* Reviews */
+.reviews-summary {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.rating-overview {
+  text-align: center;
+}
+
+.rating-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.overall-rating .stars {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.total-reviews {
+  color: var(--body-color);
+}
+
+.review-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.review-item:last-child {
+  border-bottom: none;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reviewer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewer-info h6 {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+
+/* Shipping Options */
+.shipping-options {
+  margin-top: 1rem;
+}
+
+.shipping-option {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ecf0f1;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.shipping-option:last-child {
+  margin-bottom: 0;
+}
+
+.shipping-option strong {
+  color: var(--secondary-color);
+}
+
+.shipping-option span {
+  color: var(--body-color);
+  margin-left: auto;
+}
+
+
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #ffc107;
+}
+
+.rating-count {
+  font-size: 0.85rem;
+  color: #777;
+  margin-left: 5px;
+}

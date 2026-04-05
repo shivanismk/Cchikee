@@ -1,0 +1,1057 @@
+<app-header></app-header>
+
+<app-breadcrumb></app-breadcrumb>
+
+<section class="main-section py-5">
+    <div class="container">
+        <div class="d-block d-lg-none mb-4">
+            <button class="btn btn-primary w-100 " id="mobile-filter-toggle" (click)="showfilter()">
+                <i class="bi bi-funnel"></i> Filter Products
+            </button>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <!-- Filter Sidebar -->
+                <div class="filter-sidebar" id="filtersidebar" data-aos="fade-right" data-delay="200">
+                    <div class="filter-header d-flex d-lg-none justify-content-between align-items-center">
+                        <h5 class="mb-0">Filters</h5>
+                        <button class="btn-close" id="close-filter" (click)="hidefilter()"></button>
+                    </div>
+
+                    <div class="filter-body">
+                        <!-- Active Filters -->
+                        <div class="active-filters mb-4">
+                            <h6 class="filter-title">Active Filters</h6>
+                            <div class="filter-tags">
+                                <span class="filter-tag">
+                                    Dresses <i class="bi bi-x"></i>
+                                </span>
+                                <span class="filter-tag">
+                                    Red <i class="bi bi-x"></i>
+                                </span>
+                                <span class="filter-tag">
+                                    Size M <i class="bi bi-x"></i>
+                                </span>
+                                <span class="filter-tag">
+                                    4+ Stars <i class="bi bi-x"></i>
+                                </span>
+                                <button class="btn btn-sm btn-outline-danger mt-2">
+                                    Clear All
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <!-- <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#categoryFilter"
+                                aria-expanded="true">
+                                <h6 class="filter-title">Category</h6>
+                                <i class="bi bi-chevron-up"></i>
+                            </div>
+                            <div class="collapse show" id="categoryFilter">
+                                <div class="filter-content">
+                                    
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#categoryFilter"
+                                aria-expanded="true">
+                                <h6 class="filter-title">Category</h6>
+                                <i class="bi bi-chevron-up"></i>
+                            </div>
+                            <div class="collapse show" id="categoryFilter">
+                                <div class="filter-content">
+
+                                    <!-- Example Category -->
+                                    <div class="subcategory">
+                                        <div class="subcategory-header" data-bs-toggle="collapse"
+                                            data-bs-target="#subcategory1" aria-expanded="false">
+                                            <span>Men's Fashion</span>
+                                            <i class="bi bi-chevron-down"></i>
+                                        </div>
+                                        <div class="collapse" id="subcategory1">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="category-dresses"
+                                                    checked>
+                                                <label class="form-check-label" for="category-dresses">
+                                                    Dresses
+                                                    <span class="filter-count">(24)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="category-dresses">
+                                                <label class="form-check-label" for="category-dresses">
+                                                    Shirt
+                                                    <span class="filter-count">(24)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="category-dresses">
+                                                <label class="form-check-label" for="category-dresses">
+                                                    Jacket
+                                                    <span class="filter-count">(24)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Example Subcategory 2 -->
+                                    <div class="subcategory">
+                                        <div class="subcategory-header" data-bs-toggle="collapse"
+                                            data-bs-target="#subcategory2" aria-expanded="false">
+                                            <span>Women's Fashion</span>
+                                            <i class="bi bi-chevron-down"></i>
+                                        </div>
+                                        <div class="collapse" id="subcategory2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="category-dresses"
+                                                    checked>
+                                                <label class="form-check-label" for="category-dresses">
+                                                    Jeans
+                                                    <span class="filter-count">(24)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="category-dresses">
+                                                <label class="form-check-label" for="category-dresses">
+                                                    Kurti
+                                                    <span class="filter-count">(24)</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="category-dresses">
+                                                <label class="form-check-label" for="category-dresses">
+                                                    Jacket
+                                                    <span class="filter-count">(24)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#priceFilter"
+                                aria-expanded="true">
+                                <h6 class="filter-title">Price Range</h6>
+                                <i class="bi bi-chevron-up"></i>
+                            </div>
+                            <div class="collapse show" id="priceFilter">
+                                <div class="filter-content">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="price-0-25" name="price-range">
+                                        <label class="form-check-label" for="price-0-25">
+                                            < ₹25 <span class="filter-count">(10)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="price-25-50"
+                                            name="price-range">
+                                        <label class="form-check-label" for="price-25-50">
+                                            ₹25 - ₹50
+                                            <span class="filter-count">(24)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="price-50-100"
+                                            name="price-range" checked>
+                                        <label class="form-check-label" for="price-50-100">
+                                            ₹50 - ₹100
+                                            <span class="filter-count">(36)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="price-100-200"
+                                            name="price-range">
+                                        <label class="form-check-label" for="price-100-200">
+                                            ₹100 - ₹200
+                                            <span class="filter-count">(18)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="price-200-plus"
+                                            name="price-range">
+                                        <label class="form-check-label" for="price-200-plus">
+                                            > ₹200
+                                            <span class="filter-count">(6)</span>
+                                        </label>
+                                    </div>
+
+
+                                    <div class="price-range-inputs mt-3">
+                                        <!-- <div class="row g-2">
+                                            <div class="col-6">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">₹</span>
+                                                    <input type="number" class="form-control" placeholder="Min"
+                                                        value="50">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">₹</span>
+                                                    <input type="number" class="form-control" placeholder="Max"
+                                                        value="100">
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <p class=" mb-0 font9">₹ 0</p>
+                                            <p class=" mb-0 font9">₹ 100</p>
+                                        </div>
+                                        <input type="range" class="form-range" max="100" id="customRange1">
+                                        <button class="btn btn-sm btn-primary w-100 mt-2">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Color Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#colorFilter"
+                                aria-expanded="true">
+                                <h6 class="filter-title">Color</h6>
+                                <i class="bi bi-chevron-up"></i>
+                            </div>
+                            <div class="collapse show" id="colorFilter">
+                                <div class="filter-content">
+                                    <div class="color-options">
+                                        <div class="color-option active">
+                                            <span class="color-swatch" style="background-color: #FF0000;"></span>
+                                            <span class="color-name">Red</span>
+                                            <span class="filter-count">(16)</span>
+                                        </div>
+                                        <div class="color-option">
+                                            <span class="color-swatch" style="background-color: #0000FF;"></span>
+                                            <span class="color-name">Blue</span>
+                                            <span class="filter-count">(24)</span>
+                                        </div>
+                                        <div class="color-option">
+                                            <span class="color-swatch" style="background-color: #008000;"></span>
+                                            <span class="color-name">Green</span>
+                                            <span class="filter-count">(12)</span>
+                                        </div>
+                                        <div class="color-option">
+                                            <span class="color-swatch" style="background-color: #800080;"></span>
+                                            <span class="color-name">Purple</span>
+                                            <span class="filter-count">(10)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Size Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#sizeFilter"
+                                aria-expanded="true">
+                                <h6 class="filter-title">Size</h6>
+                                <i class="bi bi-chevron-up"></i>
+                            </div>
+                            <div class="collapse show" id="sizeFilter">
+                                <div class="filter-content">
+                                    <div class="filter-size">
+                                        <div class="filter-size-option active">
+                                            <span class="filter-sizes">L</span>
+                                            <span class="filter-count">(12)</span>
+                                        </div>
+                                        <div class="filter-size-option">
+                                            <span class="filter-sizes">M</span>
+                                            <span class="filter-count">(08)</span>
+                                        </div>
+                                        <div class="filter-size-option">
+                                            <span class="filter-sizes">XL</span>
+                                            <span class="filter-count">(10)</span>
+                                        </div>
+                                        <div class="filter-size-option">
+                                            <span class="filter-sizes">XXL</span>
+                                            <span class="filter-count">(50)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Brand Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#brandFilter"
+                                aria-expanded="false">
+                                <h6 class="filter-title">Brand</h6>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="brandFilter">
+                                <div class="filter-content">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="brand-stylehub">
+                                        <label class="form-check-label" for="brand-stylehub">
+                                            StyleHub
+                                            <span class="filter-count">(42)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="brand-fashionforward">
+                                        <label class="form-check-label" for="brand-fashionforward">
+                                            FashionForward
+                                            <span class="filter-count">(28)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="brand-urbanchic">
+                                        <label class="form-check-label" for="brand-urbanchic">
+                                            UrbanChic
+                                            <span class="filter-count">(24)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="brand-elegantwear">
+                                        <label class="form-check-label" for="brand-elegantwear">
+                                            ElegantWear
+                                            <span class="filter-count">(18)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="brand-trendyyou">
+                                        <label class="form-check-label" for="brand-trendyyou">
+                                            TrendyYou
+                                            <span class="filter-count">(16)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Material Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#materialFilter"
+                                aria-expanded="false">
+                                <h6 class="filter-title">Material</h6>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="materialFilter">
+                                <div class="filter-content">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="material-cotton">
+                                        <label class="form-check-label" for="material-cotton">
+                                            Cotton
+                                            <span class="filter-count">(36)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="material-polyester">
+                                        <label class="form-check-label" for="material-polyester">
+                                            Polyester
+                                            <span class="filter-count">(24)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="material-linen">
+                                        <label class="form-check-label" for="material-linen">
+                                            Linen
+                                            <span class="filter-count">(12)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="material-silk">
+                                        <label class="form-check-label" for="material-silk">
+                                            Silk
+                                            <span class="filter-count">(8)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="material-denim">
+                                        <label class="form-check-label" for="material-denim">
+                                            Denim
+                                            <span class="filter-count">(18)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="material-wool">
+                                        <label class="form-check-label" for="material-wool">
+                                            Wool
+                                            <span class="filter-count">(6)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="material-leather">
+                                        <label class="form-check-label" for="material-leather">
+                                            Leather
+                                            <span class="filter-count">(4)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Style Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#styleFilter"
+                                aria-expanded="false">
+                                <h6 class="filter-title">Style</h6>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="styleFilter">
+                                <div class="filter-content">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="style-casual">
+                                        <label class="form-check-label" for="style-casual">
+                                            Casual
+                                            <span class="filter-count">(42)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="style-formal">
+                                        <label class="form-check-label" for="style-formal">
+                                            Formal
+                                            <span class="filter-count">(18)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="style-bohemian">
+                                        <label class="form-check-label" for="style-bohemian">
+                                            Bohemian
+                                            <span class="filter-count">(12)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="style-vintage">
+                                        <label class="form-check-label" for="style-vintage">
+                                            Vintage
+                                            <span class="filter-count">(8)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="style-sporty">
+                                        <label class="form-check-label" for="style-sporty">
+                                            Sporty
+                                            <span class="filter-count">(16)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="style-minimalist">
+                                        <label class="form-check-label" for="style-minimalist">
+                                            Minimalist
+                                            <span class="filter-count">(14)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="style-glamorous">
+                                        <label class="form-check-label" for="style-glamorous">
+                                            Glamorous
+                                            <span class="filter-count">(6)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rating Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#ratingFilter"
+                                aria-expanded="false">
+                                <h6 class="filter-title">Rating</h6>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="ratingFilter">
+                                <div class="filter-content">
+                                    <div class="rating-options">
+                                        <div class="rating-option active">
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star"></i>
+                                                <span class="rating-text">& Up</span>
+                                            </div>
+                                            <span class="filter-count">(48)</span>
+                                        </div>
+                                        <div class="rating-option">
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <span class="rating-text">& Up</span>
+                                            </div>
+                                            <span class="filter-count">(72)</span>
+                                        </div>
+                                        <div class="rating-option">
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <span class="rating-text">& Up</span>
+                                            </div>
+                                            <span class="filter-count">(86)</span>
+                                        </div>
+                                        <div class="rating-option">
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill active"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <i class="bi bi-star"></i>
+                                                <span class="rating-text">& Up</span>
+                                            </div>
+                                            <span class="filter-count">(94)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Filter Footer -->
+                    <div class="filter-footer d-flex d-lg-none justify-content-between">
+                        <button class="btn btn-outline-secondary">Reset All</button>
+                        <button class="btn btn-primary">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="products-header mb-4" data-aos="fade-up" data-delay="200">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="results-count mb-0">Showing <b>{{products.length}}</b> products</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="sort-filter d-flex justify-content-md-end mt-3 mt-md-0">
+                                <div class="dropdown d-flex justify-content-center align-items-center">
+                                    Sort by :
+                                    <button class="btn btn-light dropdown-toggle" type="button" id="sortDropdown"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Default Sorting
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                                        <li class="active">
+                                            <a class="dropdown-item font9" href="javascript:void(0)">
+                                                Default Sorting
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item font9" href="javascript:void(0)">
+                                                Sort By Latest
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item font9" href="javascript:void(0)">
+                                                Sort By Price: Low To High
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item font9" href="javascript:void(0)">
+                                                Sort By Price: High To Low
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4" data-aos="fade-up" data-delay="500">
+                    <div class="col-md-6 col-lg-4" *ngFor="let product of products">
+                        <div class="product-card">
+                            <div class="product-img" style="cursor:pointer" [routerLink]="['/product', product.id]">
+                                <img *ngIf="product.images?.length"
+                                    [src]="getImageUrl(product.images[0].image_url)"
+                                    alt="{{product.name}}"
+                                    class="img-fluid"
+                                    onerror="this.src='assets/images/no-image.png'">
+                                <img *ngIf="!product.images?.length"
+                                    src="assets/images/no-image.png"
+                                    alt="No image"
+                                    class="img-fluid">
+                                <span class="badge badge-sale" *ngIf="product.is_new_arrival">New</span>
+                                <span class="badge badge-sale" *ngIf="product.is_trending && !product.is_new_arrival">Trending</span>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Add to Cart" (click)="addToCart(product)">
+                                        <i class="bi bi-bag-plus"></i>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                    <button class="action-btn" title="Quick View">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <span class="product-category">{{ product.levelOneCategory?.name || 'General' }}</span>
+                                <h3 class="product-title">
+                                    <a [routerLink]="['/product', product.id]">{{product.name}}</a>
+                                </h3>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="rating-count">(4.2)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹{{product.price}}</span>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-between align-items-center">
+
+                                    <div class="product-colors">
+                                        <div class="color-swatch active" title="red" style="background-color: red;">
+                                        </div>
+                                        <div class="color-swatch" title="green" style="background-color: green;"></div>
+                                        <div class="color-swatch" title="yellow" style="background-color: yellow;">
+                                        </div>
+                                        <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                                    </div>
+                                    <div class="product-sizes">
+                                        <div class="size-options active"> L</div>
+                                        <div class="size-options"> M</div>
+                                        <div class="size-options"> XL</div>
+                                        <div class="size-options"> XXL</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/img/img2.avif" alt="img" class="img-fluid">
+                                <span class="badge badge-sale">
+                                    New
+                                </span>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Add to Cart" (click)="addToCart(product)">
+                                        <i class="bi bi-bag-plus"></i>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                    <button class="action-btn" title="Quick View">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <span class="product-category">Men</span>
+                                <h3 class="product-title">
+                                    <a href="javascript:void(0)" routerLink="/product">Slim Fit Casual Shirt</a>
+                                </h3>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="rating-count">(4.2)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="old-price"></span>
+
+                                    <span class="current-price">₹45.99</span>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-between align-items-center">
+
+                                    <div class="product-colors">
+                                        <div class="color-swatch active" title="red" style="background-color: red;">
+                                        </div>
+                                        <div class="color-swatch" title="green" style="background-color: green;"></div>
+                                        <div class="color-swatch" title="yellow" style="background-color: yellow;">
+                                        </div>
+                                        <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                                    </div>
+                                    <div class="product-sizes">
+                                        <div class="size-options active"> L</div>
+                                        <div class="size-options"> M</div>
+                                        <div class="size-options"> XL</div>
+                                        <div class="size-options"> XXL</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/img/img3.avif" alt="img" class="img-fluid">
+                                <span class="badge badge-sale">
+                                    Sale
+                                </span>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Add to Cart" (click)="addToCart(product)">
+                                        <i class="bi bi-bag-plus"></i>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                    <button class="action-btn" title="Quick View">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <span class="product-category">Accessories</span>
+                                <h3 class="product-title">
+                                    <a href="javascript:void(0)" routerLink="/product">Leather Crossbody Bag</a>
+                                </h3>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="rating-count">(4.2)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="old-price">₹79.99</span>
+
+                                    <span class="current-price">₹59.99</span>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-between align-items-center">
+
+                                    <div class="product-colors">
+                                        <div class="color-swatch active" title="red" style="background-color: red;">
+                                        </div>
+                                        <div class="color-swatch" title="green" style="background-color: green;"></div>
+                                        <div class="color-swatch" title="yellow" style="background-color: yellow;">
+                                        </div>
+                                        <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                                    </div>
+                                    <div class="product-sizes">
+                                        <div class="size-options active"> L</div>
+                                        <div class="size-options"> M</div>
+                                        <div class="size-options"> XL</div>
+                                        <div class="size-options"> XXL</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/img/img4.avif" alt="img" class="img-fluid">
+                                <span class="badge badge-sale">
+                                    New
+                                </span>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Add to Cart" (click)="addToCart(product)">
+                                        <i class="bi bi-bag-plus"></i>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                    <button class="action-btn" title="Quick View">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <span class="product-category">Kids</span>
+                                <h3 class="product-title">
+                                    <a href="javascript:void(0)" routerLink="/product">Kids Denim Jacket</a>
+                                </h3>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="rating-count">(4.2)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="old-price">₹79.99</span>
+
+                                    <span class="current-price">₹39.99</span>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-between align-items-center">
+
+                                    <div class="product-colors">
+                                        <div class="color-swatch active" title="red" style="background-color: red;">
+                                        </div>
+                                        <div class="color-swatch" title="green" style="background-color: green;"></div>
+                                        <div class="color-swatch" title="yellow" style="background-color: yellow;">
+                                        </div>
+                                        <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                                    </div>
+                                    <div class="product-sizes">
+                                        <div class="size-options active"> L</div>
+                                        <div class="size-options"> M</div>
+                                        <div class="size-options"> XL</div>
+                                        <div class="size-options"> XXL</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/img/img1.jpg" alt="img" class="img-fluid">
+                                <span class="badge badge-sale">
+                                    New
+                                </span>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Add to Cart" (click)="addToCart(product)">
+                                        <i class="bi bi-bag-plus"></i>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                    <button class="action-btn" title="Quick View">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <span class="product-category">Women</span>
+                                <h3 class="product-title">
+                                    <a href="javascript:void(0)" routerLink="/product">Floral Summer Dress</a>
+                                </h3>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="rating-count">(4.2)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="old-price">₹79.99</span>
+
+                                    <span class="current-price">₹59.99</span>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-between align-items-center">
+
+                                    <div class="product-colors">
+                                        <div class="color-swatch active" title="red" style="background-color: red;">
+                                        </div>
+                                        <div class="color-swatch" title="green" style="background-color: green;"></div>
+                                        <div class="color-swatch" title="yellow" style="background-color: yellow;">
+                                        </div>
+                                        <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                                    </div>
+                                    <div class="product-sizes">
+                                        <div class="size-options active"> L</div>
+                                        <div class="size-options"> M</div>
+                                        <div class="size-options"> XL</div>
+                                        <div class="size-options"> XXL</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/img/img2.avif" alt="img" class="img-fluid">
+                                <span class="badge badge-sale">
+                                    New
+                                </span>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Add to Cart" (click)="addToCart(product)">
+                                        <i class="bi bi-bag-plus"></i>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                    <button class="action-btn" title="Quick View">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <span class="product-category">Men</span>
+                                <h3 class="product-title">
+                                    <a href="javascript:void(0)" routerLink="/product">Slim Fit Casual Shirt</a>
+                                </h3>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="rating-count">(4.2)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="old-price"></span>
+
+                                    <span class="current-price">₹45.99</span>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-between align-items-center">
+
+                                    <div class="product-colors">
+                                        <div class="color-swatch active" title="red" style="background-color: red;">
+                                        </div>
+                                        <div class="color-swatch" title="green" style="background-color: green;"></div>
+                                        <div class="color-swatch" title="yellow" style="background-color: yellow;">
+                                        </div>
+                                        <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                                    </div>
+                                    <div class="product-sizes">
+                                        <div class="size-options active"> L</div>
+                                        <div class="size-options"> M</div>
+                                        <div class="size-options"> XL</div>
+                                        <div class="size-options"> XXL</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/img/img3.avif" alt="img" class="img-fluid">
+                                <span class="badge badge-sale">
+                                    Sale
+                                </span>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Add to Cart" (click)="addToCart(product)">
+                                        <i class="bi bi-bag-plus"></i>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                    <button class="action-btn" title="Quick View">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <span class="product-category">Accessories</span>
+                                <h3 class="product-title">
+                                    <a href="javascript:void(0)" routerLink="/product">Leather Crossbody Bag</a>
+                                </h3>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="rating-count">(4.2)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="old-price">₹79.99</span>
+
+                                    <span class="current-price">₹59.99</span>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-between align-items-center">
+
+                                    <div class="product-colors">
+                                        <div class="color-swatch active" title="red" style="background-color: red;">
+                                        </div>
+                                        <div class="color-swatch" title="green" style="background-color: green;"></div>
+                                        <div class="color-swatch" title="yellow" style="background-color: yellow;">
+                                        </div>
+                                        <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                                    </div>
+                                    <div class="product-sizes">
+                                        <div class="size-options active"> L</div>
+                                        <div class="size-options"> M</div>
+                                        <div class="size-options"> XL</div>
+                                        <div class="size-options"> XXL</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/img/img4.avif" alt="img" class="img-fluid">
+                                <span class="badge badge-sale">
+                                    New
+                                </span>
+                                <div class="product-actions">
+                                    <button class="action-btn" title="Add to Cart" (click)="addToCart(product)">
+                                        <i class="bi bi-bag-plus"></i>
+                                    </button>
+                                    <button class="action-btn" title="Add to Wishlist">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+                                    <button class="action-btn" title="Quick View">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <span class="product-category">Kids</span>
+                                <h3 class="product-title">
+                                    <a href="javascript:void(0)" routerLink="/product">Kids Denim Jacket</a>
+                                </h3>
+                                <div class="product-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    <span class="rating-count">(4.2)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="old-price">₹79.99</span>
+
+                                    <span class="current-price">₹39.99</span>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-between align-items-center">
+
+                                    <div class="product-colors">
+                                        <div class="color-swatch active" title="red" style="background-color: red;">
+                                        </div>
+                                        <div class="color-swatch" title="green" style="background-color: green;"></div>
+                                        <div class="color-swatch" title="yellow" style="background-color: yellow;">
+                                        </div>
+                                        <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                                    </div>
+                                    <div class="product-sizes">
+                                        <div class="size-options active"> L</div>
+                                        <div class="size-options"> M</div>
+                                        <div class="size-options"> XL</div>
+                                        <div class="size-options"> XXL</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-container mt-5" data-aos="fade-up">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="javascript:void(0)" tabindex="-1" aria-disabled="true">
+                                    <i class="bi bi-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="javascript:void(0)">
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

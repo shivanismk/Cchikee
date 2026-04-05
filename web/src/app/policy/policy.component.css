@@ -1,0 +1,39 @@
+
+/* Policy Content Section */
+.policy-content {
+  padding: 60px 0;
+}
+
+.policy-container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+@media (max-width:992px) {
+    .policy-container{
+        padding: 20px;
+    }
+}
+.policy-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+}
+
+.policy-section p {
+  color: var(--body-color);
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.policy-section ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.policy-section ul li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+   color: var(--body-color);
+}

@@ -1,0 +1,166 @@
+<app-header></app-header>
+
+<app-breadcrumb></app-breadcrumb>
+
+<section class="main-section py-5">
+
+
+<div class="container py-5" *ngIf="isLoading">
+  <div class="text-center">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="mt-2 text-muted">Loading product...</p>
+  </div>
+</div>
+<app-product-view *ngIf="!isLoading && product" [owlCarouselId]="'productDetail'" [product]="product"></app-product-view>
+<div class="container py-5" *ngIf="!isLoading && !product">
+  <div class="alert alert-warning">Product not found.</div>
+</div>
+    <!-- Product Details Tabs -->
+    <div class="container my-5" data-aos="fade-up" data-aos-delay="500" data-aos-duration="2000">
+        <div class="product-tabs">
+            <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
+                        data-bs-target="#description" type="button">Description</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="specifications-tab" data-bs-toggle="tab"
+                        data-bs-target="#specifications" type="button">Specifications</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews"
+                        type="button">Reviews (124)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping"
+                        type="button">Shipping</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="productTabsContent">
+                <div class="tab-pane fade show active" id="description" role="tabpanel">
+                    <div class="tab-content-wrapper">
+                        <h4>Product Description</h4>
+                        <p>This premium leather jacket is crafted from the finest genuine leather, offering both style
+                            and durability. The classic design features a modern fit that's perfect for any occasion.
+                        </p>
+                        <ul>
+                            <li>100% Genuine Leather</li>
+                            <li>YKK Zippers</li>
+                            <li>Quilted Lining</li>
+                            <li>Multiple Pockets</li>
+                            <li>Adjustable Cuffs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="specifications" role="tabpanel">
+                    <div class="tab-content-wrapper">
+                        <h4>Specifications</h4>
+                        <table class="table">
+                            <tr>
+                                <td>Material</td>
+                                <td>100% Genuine Leather</td>
+                            </tr>
+                            <tr>
+                                <td>Lining</td>
+                                <td>Quilted Polyester</td>
+                            </tr>
+                            <tr>
+                                <td>Closure</td>
+                                <td>Front Zip</td>
+                            </tr>
+                            <tr>
+                                <td>Pockets</td>
+                                <td>4 External, 2 Internal</td>
+                            </tr>
+                            <tr>
+                                <td>Care</td>
+                                <td>Professional Leather Cleaning</td>
+                            </tr>
+                            <tr>
+                                <td>Origin</td>
+                                <td>Made in Italy</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="reviews" role="tabpanel">
+                    <div class="tab-content-wrapper">
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <div class="overall-rating">
+                                    <span class="rating-number">4.8</span>
+                                    <div class="product-rating justify-content-center">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                        <i class="bi bi-star"></i>
+                                    </div>
+                                    <span class="total-reviews">Based on 124 reviews</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-item">
+                            <div class="reviewer-info">
+                                <img src="assets/images/user.jpg" alt="Reviewer" class="reviewer-avatar">
+                                <div>
+                                    <h6>Sarah Johnson</h6>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span class="rating-count">(4.2)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Amazing quality! The leather is soft and the fit is perfect. Highly recommend!"</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="reviewer-info">
+                                <img src="assets/images/user.jpg" alt="Reviewer" class="reviewer-avatar">
+                                <div>
+                                    <h6>Mike Chen</h6>
+                                    <div class="product-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span class="rating-count">(4.2)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Great jacket, exactly as described. Fast shipping and excellent customer service."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="shipping" role="tabpanel">
+                    <div class="tab-content-wrapper">
+                        <h4>Shipping Information</h4>
+                        <div class="shipping-options">
+                            <div class="shipping-option">
+                                <strong>Standard Shipping (5-7 days)</strong>
+                                <span>Free on orders over ₹100</span>
+                            </div>
+                            <div class="shipping-option">
+                                <strong>Express Shipping (2-3 days)</strong>
+                                <span>₹15.99</span>
+                            </div>
+                            <div class="shipping-option">
+                                <strong>Next Day Delivery</strong>
+                                <span>₹29.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-new-arrival></app-new-arrival>
+</section>
+
+
+<app-footer></app-footer>

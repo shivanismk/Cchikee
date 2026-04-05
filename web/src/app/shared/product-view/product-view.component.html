@@ -1,0 +1,135 @@
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="500" data-aos-duration="2000">
+                <div class="product-main-img">
+
+                    <!-- <owl-carousel-o [options]="customOptions" >
+                        <ng-template carouselSlide>
+                            <div class="product-detail-img">
+                                <img src="assets/images/img/img1.jpg" class="img-fluid" alt="">
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="product-detail-img">
+                                <img src="assets/images/img/img2.avif" class="img-fluid" alt="">
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="product-detail-img">
+                                <img src="assets/images/img/img3.avif" class="img-fluid" alt="">
+                            </div>
+                        </ng-template>
+                          <ng-template carouselSlide>
+                            <div class="product-thumbnail-img">
+                                <img src="assets/images/blog/blog1.jpg" class="img-fluid" alt="">
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o> -->
+
+                    <div class="product-detail-img position-relative">
+                        <div class="badge badge-sale">New</div>
+                        <a [href]="mainImage" data-lightbox="gallery">
+                            <img [src]="mainImage" class="img-fluid" alt="mainimg"
+                                onerror="this.src='assets/images/no-image.png'">
+                        </a>
+                    </div>
+                </div>
+                <div class="product-thumbnail mt-3" *ngIf="product?.images?.length">
+                    <owl-carousel-o #owlElement [options]="customOptions3">
+                        <ng-template carouselSlide *ngFor="let img of product.images">
+                            <div class="product-thumbnail-img" (click)="setMainImage(getImageUrl(img.image_url))">
+                                <img [src]="getImageUrl(img.image_url)" class="img-fluid" alt="img"
+                                    onerror="this.src='assets/images/no-image.png'">
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500" data-aos-duration="2000">
+                <div class="product-info">
+                    <!-- Product Title & Rating -->
+                    <div class="product-header">
+                        <h1 class="product-title">{{ product?.name }}</h1>
+                        <div class="product-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                            <span class="rating-count">(4.2)</span>
+                        </div>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="price-section">
+                        <div class="current-price">₹{{ product?.price }}</div>
+                        <span class="badge bg-success ms-2" *ngIf="product?.is_active">In Stock</span>
+                        <span class="badge bg-secondary ms-2" *ngIf="!product?.is_active">Out of Stock</span>
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="product-description" *ngIf="product?.description">
+                        <p>{{ product?.description }}</p>
+                    </div>
+
+                    <!-- Color Selection -->
+                    <div class="row align-items-center mb-3">
+                        <div class="col-lg-6">
+                            <div class="selection-group ">
+                                <label class="selection-label mb-2">Color: <span
+                                        class="selected-option">Red</span></label>
+                               <div class="product-colors">
+                      <div class="color-swatch active" title="red" style="background-color: red;"></div>
+                      <div class="color-swatch" title="green" style="background-color: green;"></div>
+                      <div class="color-swatch" title="yellow" style="background-color: yellow;"></div>
+                      <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                    </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+
+                            <!-- Size Selection -->
+                            <div class="selection-group">
+                                <label class="selection-label mb-2">Size: <span class="selected-option">{{ selectedSize || 'None' }}</span></label>
+                                <div class="product-sizes">
+                                    <div class="size-options" *ngFor="let size of ['S','M','L','XL','XXL']"
+                                        [class.active]="selectedSize === size"
+                                        (click)="selectSize(size)">{{ size }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Quantity -->
+                    <div class="selection-group">
+                        <label class="selection-label">Quantity:</label>
+                        <div class="quantity-selector mt-1">
+                            <button class="qty-btn minus" type="button" (click)="decreaseQty()">-</button>
+                            <input type="text" class="qty-input" [value]="quantity" min="1" max="10" readonly>
+                            <button class="qty-btn plus" type="button" (click)="increaseQty()">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons d-flex justify-content-start align-items-center gap-4 mt-3">
+                        <button class="btn btn-primary btn-cart" (click)="addToCart()">
+                            <i class="bi bi-bag me-2"></i>
+                            Add to Cart
+                        </button>
+                        <button class="btn btn-outline-primary" (click)="addToWishlist()">
+                               Add to Wishlist
+                        </button>
+                    </div>
+                    <div class="social-links align-items-center mt-3">
+                        <p class="mb-0">Share :</p>
+                        <a href="javascript:void(0)" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="javascript:void(0)" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="javascript:void(0)" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="javascript:void(0)" class="social-link"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

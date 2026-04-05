@@ -1,0 +1,244 @@
+<section class="testimonials-section py-5">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center mb-5">
+            <h6 class="text-uppercase text-primary mb-2">Testimonials</h6>
+            <h2 class="section-title mb-3">What Customers Say About Us</h2>
+            <div class="divider mx-auto"></div>
+        </div>
+
+        <!-- Stats Section -->
+        <!-- <div class="stats-row mb-5">
+      <div class="row text-center">
+        <div class="col-6 col-md-3 mb-3 mb-md-0">
+          <div class="stat-card">
+            <h3 class="stat-value">50K+</h3>
+            <p class="stat-label">Happy Customers</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3 mb-md-0">
+          <div class="stat-card">
+            <h3 class="stat-value">4.9</h3>
+            <p class="stat-label">Average Rating</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3 mb-md-0">
+          <div class="stat-card">
+            <h3 class="stat-value">98%</h3>
+            <p class="stat-label">Satisfaction Rate</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3 mb-md-0">
+          <div class="stat-card">
+            <h3 class="stat-value">24/7</h3>
+            <p class="stat-label">Customer Support</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+        <!-- Testimonials Grid -->
+        <div class="testimonials-container">
+            <div class="row g-4" data-aos="fade-up" data-aos-delay="500" data-aos-duration="2000">
+                <div class="col-lg-12">
+                    <owl-carousel-o [options]="customOptions">
+                        <ng-template carouselSlide>
+                            <div class="testimonial-card">
+                                <!-- Platform Badge -->
+                                <div class="platform-badge" style="background-color: #E4405F;">
+                                    <i class="bi bi-instagram"></i>
+                                </div>
+
+                                <!-- Quote Icon -->
+                                <div class="quote-icon">
+                                    <i class="bi bi-quote"></i>
+                                </div>
+
+                                <!-- Rating -->
+                                <div class="rating mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+
+                                <!-- Review Text -->
+                                <p class="review-text limit4">"Absolutely love my new dress! The quality is exceptional and the
+                                    fit is perfect. StyleHub has become my go-to for fashion."</p>
+
+                                <!-- Product Info -->
+                                <div class="product-info">
+                                    <span class="product-name">Summer Floral Dress</span>
+                                    <span class="verified-badge">
+                                        <i class="bi bi-patch-check-fill"></i>
+                                        Verified Purchase
+                                    </span>
+                                </div>
+
+                                <!-- Customer Info -->
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <img src="assets/images/user.jpg" alt="Sarah Johnson" class="img-fluid">
+                                    </div>
+                                    <div class="customer-details">
+                                        <h5 class="customer-name">Sarah Johnson</h5>
+                                        <p class="customer-location">New York, USA</p>
+                                        <span class="review-date">2 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="testimonial-card">
+                                <!-- Platform Badge -->
+                                <div class="platform-badge" style="background-color: #4285F4;">
+                                    <i class="bi bi-google"></i>
+                                </div>
+
+                                <!-- Quote Icon -->
+                                <div class="quote-icon">
+                                    <i class="bi bi-quote"></i>
+                                </div>
+
+                                <!-- Rating -->
+                                <div class="rating mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+
+                                <!-- Review Text -->
+                                <p class="review-text limit4">"Fast shipping and amazing customer service. The jacket I ordered
+                                    exceeded my expectations. Highly recommend!"</p>
+
+                                <!-- Product Info -->
+                                <div class="product-info">
+                                    <span class="product-name">Leather Jacket</span>
+                                    <span class="verified-badge">
+                                        <i class="bi bi-patch-check-fill"></i>
+                                        Verified Purchase
+                                    </span>
+                                </div>
+
+                                <!-- Customer Info -->
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <img src="assets/images/user.jpg" alt="Emma Wilson" class="img-fluid">
+                                    </div>
+                                    <div class="customer-details">
+                                        <h5 class="customer-name">Emma Wilson</h5>
+                                        <p class="customer-location">London, UK</p>
+                                        <span class="review-date">1 week ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="testimonial-card limit4">
+                                <!-- Platform Badge -->
+                                <div class="platform-badge" style="background-color: #1877F2;">
+                                    <i class="bi bi-facebook"></i>
+                                </div>
+
+                                <!-- Quote Icon -->
+                                <div class="quote-icon">
+                                    <i class="bi bi-quote"></i>
+                                </div>
+
+                                <!-- Rating -->
+                                <div class="rating mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+
+                                <!-- Review Text -->
+                                <p class="review-text">"Beautiful collection and great prices. The only thing is I wish
+                                    there
+                                    were more size options, but overall very satisfied."</p>
+
+                                <!-- Product Info -->
+                                <div class="product-info">
+                                    <span class="product-name">Casual Sneakers</span>
+                                    <span class="verified-badge">
+                                        <i class="bi bi-patch-check-fill"></i>
+                                        Verified Purchase
+                                    </span>
+                                </div>
+
+                                <!-- Customer Info -->
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <img src="assets/images/user.jpg" alt="Maria Garcia" class="img-fluid">
+                                    </div>
+                                    <div class="customer-details">
+                                        <h5 class="customer-name">Maria Garcia</h5>
+                                        <p class="customer-location">Barcelona, Spain</p>
+                                        <span class="review-date">3 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="testimonial-card">
+                                <!-- Platform Badge -->
+                                <div class="platform-badge" style="background-color: #ff6b6b;">
+                                    <i class="bi bi-globe"></i>
+                                </div>
+
+                                <!-- Quote Icon -->
+                                <div class="quote-icon">
+                                    <i class="bi bi-quote"></i>
+                                </div>
+
+                                <!-- Rating -->
+                                <div class="rating mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+
+                                <!-- Review Text -->
+                                <p class="review-text limit4">"The quality of the fabric is outstanding! I've washed it
+                                    multiple times
+                                    and it still looks brand new. Will definitely order again."</p>
+
+                                <!-- Product Info -->
+                                <div class="product-info">
+                                    <span class="product-name">Cotton T-Shirt</span>
+                                    <span class="verified-badge">
+                                        <i class="bi bi-patch-check-fill"></i>
+                                        Verified Purchase
+                                    </span>
+                                </div>
+
+                                <!-- Customer Info -->
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <img src="assets/images/user.jpg" alt="Jessica Chen" class="img-fluid">
+                                    </div>
+                                    <div class="customer-details">
+                                        <h5 class="customer-name">Jessica Chen</h5>
+                                        <p class="customer-location">Toronto, Canada</p>
+                                        <span class="review-date">5 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

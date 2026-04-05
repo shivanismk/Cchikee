@@ -1,0 +1,270 @@
+.section-header .text-primary {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.testimonials-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* .testimonials-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+} */
+
+.section-header {
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+
+/* Stats Section */
+.stats-row {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card {
+  padding: 1rem;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ff6b6b, #ffa500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Testimonials Container */
+.testimonials-container {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  height: 100% !important;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+}
+
+.platform-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: rgba(255, 107, 107, 0.2);
+  font-size: 2rem;
+}
+
+.rating {
+  color: #ffc107;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.review-text {
+  color: #555;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  min-height: 110px;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.product-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #28a745;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.verified-badge i {
+  font-size: 1rem;
+}
+
+.customer-info {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.customer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f8f9fa;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.customer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.customer-details {
+  flex: 1;
+}
+
+.customer-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.customer-location {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.review-date {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+
+  .testimonials-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .customer-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .product-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+
+  .testimonials-container {
+    padding: 1rem;
+  }
+
+  .testimonial-card {
+    padding: 1rem;
+  }
+}

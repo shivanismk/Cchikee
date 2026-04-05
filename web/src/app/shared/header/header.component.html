@@ -1,0 +1,340 @@
+<!-- Desktop Navbar -->
+<nav class="navbar navbar-expand-lg " id="mainNavbar">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="javascript:void(0)" routerLink="/home">
+            <img src="assets/images/logo.png" loading="lazy"  alt="StyleHub" height="70px">
+        </a>
+        <ul class="navbar-nav  d-flex flex-row d-lg-none">
+             
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" routerLink="/user-login">
+                        <i class="bi bi-person"></i>
+                    </a>
+
+                      <!-- after login  -->
+                      <!-- <a class="nav-link" href="javascript:void(0)" routerLink="/dashboard">
+                        <img src="assets/images/user.jpg" class="user-img" alt="">
+                    </a> -->
+                </li>
+                <li class="nav-item position-relative">
+                    <a class="nav-link position-relative" href="javascript:void(0)" routerLink="/wishlist">
+                        <i class="bi bi-heart"></i>
+                         <span class="position-absolute top-0 badge rounded-pill bg-danger" *ngIf="wishlistCount > 0">
+                           {{ wishlistCount }}
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item position-relative">
+                    <a class="nav-link position-relative" href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <i class="bi bi-bag"></i>
+                        <span class="position-absolute top-0 badge rounded-pill bg-danger" *ngIf="cartCount > 0">
+                            {{ cartCount }}
+                        </span>
+                    </a>
+                </li>
+        </ul>
+        <!-- Mobile Toggle Button for Offcanvas -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="bi bi-list"></i>
+        </button>
+            
+        <!-- Desktop Navigation Menu -->
+        <div class="collapse navbar-collapse" id="navbarMegaMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="javascript:void(0)" routerLink="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="javascript:void(0)" routerLink="/about">About</a>
+                </li>
+
+                <!-- Dynamic Categories -->
+                <li class="nav-item dropdown position-static" *ngFor="let cat of categories">
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ cat.name }}
+                    </a>
+                    <div class="dropdown-menu mega-menu w-100 p-3">
+                        <div class="row">
+                            <!-- Subcategory Columns (only if data exists) -->
+                            <div [class]="cat.subcategories?.length > 0 ? 'col-md-8' : 'col-md-12'">
+                                <div class="row" *ngIf="cat.subcategories?.length > 0; else noSubcategories">
+                                    <div class="col-md-4 mb-3" *ngFor="let sub of cat.subcategories">
+                                        <h6 class="fw-bold mb-2">
+                                            <a class="text-dark text-decoration-none" href="javascript:void(0)" routerLink="/category">{{ sub.name }}</a>
+                                        </h6>
+                                        <ul class="list-unstyled">
+                                            <li *ngFor="let subSub of sub.subcategories">
+                                                <a class="dropdown-item py-1" href="javascript:void(0)" routerLink="/category">{{ subSub.name }}</a>
+                                            </li>
+                                            <li *ngIf="sub.subcategories?.length === 0">
+                                                <a class="dropdown-item py-1" href="javascript:void(0)" routerLink="/category">View All</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ng-template #noSubcategories>
+                                    <p class="text-muted small py-2">No subcategories available.</p>
+                                </ng-template>
+                            </div>
+                            <!-- Featured (only when subcategories exist) -->
+                            <div class="col-md-4" *ngIf="cat.subcategories?.length > 0">
+                                <h6 class="fw-bold mb-3">Featured</h6>
+                                <div class="row">
+                                    <div class="col-6 mb-3">
+                                        <div class="card border-0">
+                                            <a href="javascript:void(0)" class="text-decoration-none" routerLink="/category">
+                                                <img src="assets/images/img/img1.jpg" loading="lazy" class="card-img-top rounded" alt="img">
+                                                <div class="card-body p-2">
+                                                    <p class="card-text small text-center">{{ cat.name }} Pick</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="card border-0">
+                                            <a href="javascript:void(0)" class="text-decoration-none" routerLink="/category">
+                                                <img src="assets/images/img/img2.avif" loading="lazy" class="card-img-top rounded" alt="img">
+                                                <div class="card-body p-2">
+                                                    <p class="card-text small text-center">New In</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" routerLink="/category">Sale</a>
+                </li>
+            </ul>
+
+            <!-- Right Side Icons -->
+            <ul class="navbar-nav ms-auto d-none d-lg-flex">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+                        aria-controls="offcanvasTop">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" routerLink="/user-login">
+                        <i class="bi bi-person"></i>
+                    </a>
+
+
+                    <!-- after login  -->
+                      <!-- <a class="nav-link" href="javascript:void(0)" routerLink="/dashboard">
+                        <img src="assets/images/user.jpg" class="user-img" alt="">
+                    </a> -->
+                </li>
+                <li class="nav-item position-relative">
+                    <a class="nav-link position-relative" href="javascript:void(0)" routerLink="/wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="position-absolute top-0 badge rounded-pill bg-danger" *ngIf="wishlistCount > 0">
+                            {{ wishlistCount }}
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item position-relative">
+                    <a class="nav-link position-relative" href="javascript:void(0)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <i class="bi bi-bag"></i>
+                        <span class="position-absolute top-0 badge rounded-pill bg-danger" *ngIf="cartCount > 0">
+                            {{ cartCount }}
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Mobile Offcanvas Menu -->
+        <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                    <a class="navbar-brand" href="javascript:void(0)" routerLink="/home">
+                        <img src="assets/images/logo.png" alt="StyleHub" height="50px">
+                    </a>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- Mobile Search -->
+                <div class="mb-3">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+
+                <!-- Mobile Navigation Links with Accordion -->
+                <div class="accordion" id="mobileNavAccordion">
+                    <div class="mb-2">
+                        <a href="javascript:void(0)" class="nav-link active" routerLink="/home">Home</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="javascript:void(0)" class="nav-link" routerLink="/about">About</a>
+                    </div>
+
+                    <!-- Dynamic Categories -->
+                    <ng-container *ngFor="let cat of categories">
+                        <!-- Category with subcategories → Accordion -->
+                        <div class="accordion-item border-0" *ngIf="cat.subcategories?.length > 0; else mobileSimpleLink">
+                            <h2 class="accordion-header" [id]="'mobileHead_' + cat.id">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    [attr.data-bs-target]="'#mobileCollapse_' + cat.id"
+                                    aria-expanded="false"
+                                    [attr.aria-controls]="'mobileCollapse_' + cat.id">
+                                    {{ cat.name }}
+                                </button>
+                            </h2>
+                            <div [id]="'mobileCollapse_' + cat.id" class="accordion-collapse collapse"
+                                [attr.aria-labelledby]="'mobileHead_' + cat.id"
+                                data-bs-parent="#mobileNavAccordion">
+                                <div class="accordion-body p-0">
+                                    <div class="accordion" [id]="'mobileSub_' + cat.id">
+                                        <ng-container *ngFor="let sub of cat.subcategories">
+                                            <!-- Sub with sub-subcategories → nested accordion -->
+                                            <div class="accordion-item border-0" *ngIf="sub.subcategories?.length > 0; else mobileSubSimpleLink">
+                                                <h3 class="accordion-header" [id]="'mobileSubHead_' + sub.id">
+                                                    <button class="accordion-button collapsed py-2 ps-4" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        [attr.data-bs-target]="'#mobileSubCollapse_' + sub.id"
+                                                        aria-expanded="false"
+                                                        [attr.aria-controls]="'mobileSubCollapse_' + sub.id">
+                                                        {{ sub.name }}
+                                                    </button>
+                                                </h3>
+                                                <div [id]="'mobileSubCollapse_' + sub.id" class="accordion-collapse collapse"
+                                                    [attr.aria-labelledby]="'mobileSubHead_' + sub.id"
+                                                    [attr.data-bs-parent]="'#mobileSub_' + cat.id">
+                                                    <div class="accordion-body p-0">
+                                                        <ul class="list-unstyled ps-5">
+                                                            <li *ngFor="let subSub of sub.subcategories">
+                                                                <a class="dropdown-item py-1" href="javascript:void(0)" routerLink="/category">{{ subSub.name }}</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Sub without sub-subcategories → simple link -->
+                                            <ng-template #mobileSubSimpleLink>
+                                                <div class="ps-4 py-1">
+                                                    <a class="dropdown-item py-1" href="javascript:void(0)" routerLink="/category">{{ sub.name }}</a>
+                                                </div>
+                                            </ng-template>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Category without subcategories → simple link -->
+                        <ng-template #mobileSimpleLink>
+                            <div class="mb-2">
+                                <a href="javascript:void(0)" class="nav-link" routerLink="/category">{{ cat.name }}</a>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+
+                    <div class="mb-2">
+                        <a href="javascript:void(0)" class="nav-link" routerLink="/category">Sale</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-top d-none d-lg-block" tabindex="-1" id="offcanvasTop"
+    aria-labelledby="offcanvasTopLabel">
+    <div class="offcanvas-header">
+        <!-- <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5> -->
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 mx-auto">
+                    <h5 class="mb-3">Search your products...</h5>
+                    <form class="d-flex">
+                        <input class="form-control me-2 ht50" type="search" placeholder="Search here..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-dark px-3" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header py-2">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Your Cart ({{ cartCount }})</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- Loading -->
+        <div class="text-center py-4" *ngIf="cartLoading">
+          <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+          <p class="mt-2 text-muted small">Loading...</p>
+        </div>
+
+        <!-- Empty -->
+        <div class="text-center py-4" *ngIf="!cartLoading && cartItems.length === 0">
+          <i class="bi bi-bag fs-2 text-muted"></i>
+          <p class="mt-2 text-muted small">Your cart is empty.</p>
+        </div>
+
+        <!-- Items -->
+        <ul class="cart-right ps-0" *ngIf="!cartLoading && cartItems.length > 0">
+          <li class="list-unstyled mb-3" *ngFor="let item of cartItems">
+            <a [routerLink]="['/product', item.product?.id]" data-bs-dismiss="offcanvas"
+               class="text-decoration-none d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-start align-items-start gap-3">
+                <img [src]="getImageUrl(item.product?.images?.[0]?.image_url || item.product?.image_url || '')"
+                     [alt]="item.product?.name"
+                     onerror="this.src='assets/images/no-image.png'">
+                <div class="cart-right-text">
+                  <h6>{{ item.product?.name }}</h6>
+                  <p class="theme-text mb-0">
+                    {{ item.quantity }} <span><i class="bi bi-x"></i></span> ₹{{ item.product?.price }}
+                  </p>
+                  <small class="text-muted" *ngIf="item.size">Size: {{ item.size }}</small>
+                </div>
+              </div>
+              <button class="btn-close close-cart" (click)="removeCartItem(item, $event)"></button>
+            </a>
+          </li>
+        </ul>
+
+        <ng-container *ngIf="!cartLoading && cartItems.length > 0">
+          <div class="d-flex justify-content-between align-items-start px-2">
+            <h6 class="mb-0">Sub Total</h6>
+            <h6 class="mb-0 fw-normal">₹{{ getCartSubtotal().toFixed(2) }}</h6>
+          </div>
+          <hr class="my-3">
+          <div class="d-flex px-2 justify-content-between align-items-start">
+            <button class="btn btn-sm btn-primary py-2 px-4 font9 text-capitalize"
+                    routerLink="/cart" data-bs-dismiss="offcanvas">View Cart</button>
+            <button class="btn btn-sm btn-primary py-2 px-4 font9 text-capitalize"
+                    routerLink="/checkout" data-bs-dismiss="offcanvas">Checkout</button>
+          </div>
+        </ng-container>
+
+      </div>
+    </div>
+  </div>
+</div>

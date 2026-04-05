@@ -1,0 +1,511 @@
+<app-header></app-header>
+
+<main class="main-section">
+  <!-- banner section starts here  -->
+  <section class="banner-section">
+    <owl-carousel-o [options]="customOptions2">
+      <ng-template carouselSlide>
+        <div class="hero-slide" style="background-image: url('assets/images/banner/banner1.jpg')">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-md-6">
+                <div class="hero-content text-start">
+                  <h6 class="subtitle" data-aos="fade-up" data-aos-delay="500">New Arrivals
+                  </h6>
+                  <h1 class="title animate__delay-1s" data-aos="fade-up" data-aos-delay="1500">Summer Collection 2025
+                  </h1>
+                  <p class="description animate__delay-2s" data-aos="fade-up" data-aos-delay="1500">
+                    Discover the latest trends in summer fashion
+                  </p>
+                  <a href="javascript:void(0)" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="2000"
+                    data-aos-duration="2500" routerLink="/category">
+                    Shop Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="hero-slide" style="background-image: url('assets/images/banner/banner2.jpg')">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-md-6">
+                <div class="hero-content text-start">
+                  <h6 class="subtitle">Limited Time</h6>
+                  <h1 class="title animate__delay-1s">Exclusive Deals</h1>
+                  <p class="description animate__delay-2s">
+                    Up to 50% off on selected items
+                  </p>
+                  <a href="javascript:void(0)" class="btn btn-primary btn-lg" routerLink="/category">
+                    View Offers
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="hero-slide" style="background-image: url('assets/images/banner/banner3.jpg')">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-md-6">
+                <div class="hero-content text-start">
+                  <h6 class="subtitle">Luxury Items</h6>
+                  <h1 class="title animate__delay-1s">Premium Collection</h1>
+                  <p class="description animate__delay-2s">
+                    Elevate your style with our premium selection
+                  </p>
+                  <a href="javascript:void(0)" class="btn btn-primary btn-lg" routerLink="/category">
+                    Explore
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </section>
+  <!-- banner section ends here  -->
+
+  <!-- banner section starts here  -->
+  <!-- <section class="banner-section d-none">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000" data-bs-pause="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+          aria-current="true"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="hero-slide" style="background-image: url('assets/images/banner/banner1.jpg')">
+            <div class="container h-100">
+              <div class="row h-100 align-items-center">
+                <div class="col-md-6">
+                  <div class="hero-content text-start">
+                    <h6 class="subtitle" data-aos="fade-up" data-aos-delay="500">New Arrivals
+                    </h6>
+                    <h1 class="title animate__delay-1s" data-aos="fade-up" data-aos-delay="1500">Summer Collection 2025
+                    </h1>
+                    <p class="description animate__delay-2s" data-aos="fade-up" data-aos-delay="1500">
+                      Discover the latest trends in summer fashion
+                    </p>
+                    <a href="javascript:void(0)" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="2000"
+                      data-aos-duration="2500" routerLink="/category">
+                      Shop Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="hero-slide" style="background-image: url('assets/images/banner/banner2.jpg')">
+            <div class="container h-100">
+              <div class="row h-100 align-items-center">
+                <div class="col-md-6">
+                  <div class="hero-content text-start">
+                    <h6 class="subtitle">Limited Time</h6>
+                    <h1 class="title animate__delay-1s">Exclusive Deals</h1>
+                    <p class="description animate__delay-2s">
+                      Up to 50% off on selected items
+                    </p>
+                    <a href="javascript:void(0)" class="btn btn-primary btn-lg" routerLink="/category">
+                      View Offers
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="hero-slide" style="background-image: url('assets/images/banner/banner3.jpg')">
+            <div class="container h-100">
+              <div class="row h-100 align-items-center">
+                <div class="col-md-6">
+                  <div class="hero-content text-start">
+                    <h6 class="subtitle">Luxury Items</h6>
+                    <h1 class="title animate__delay-1s">Premium Collection</h1>
+                    <p class="description animate__delay-2s">
+                      Elevate your style with our premium selection
+                    </p>
+                    <a href="javascript:void(0)" class="btn btn-primary btn-lg" routerLink="/category">
+                      Explore
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section> -->
+
+  <!-- banner section ends here  -->
+
+
+  <!-- feauture section starts here  -->
+  <section class="features py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
+          <div class="feature-box d-flex justify-content-start align-items-start gap-4">
+            <div class="feature-icon"><img src="assets/images/fast-delivery.png" alt="fast-delivery" width="60px"></div>
+            <div>
+              <h5 class="feature-title mb-1 fw-semibold">Free Shipping</h5>
+              <p class="feature-text text-muted font9">Enjoy fast and free shipping on all your orders.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
+          <div class="feature-box d-flex justify-content-start align-items-start gap-4">
+            <div class="feature-icon"><img src="assets/images/secure-payment.png" alt="secure-payment" width="60px">
+            </div>
+            <div>
+              <h5 class="feature-title mb-1 fw-semibold">Secure Payments</h5>
+              <p class="feature-text text-muted font9">Your transactions are safe with our secure system.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="1500" data-aos-duration="1500">
+          <div class="feature-box d-flex justify-content-start align-items-start gap-4">
+            <div class="feature-icon"><img src="assets/images/product-return.png" alt="easy-return" width="60px"></div>
+            <div>
+              <h5 class="feature-title mb-1 fw-semibold">Easy Returns</h5>
+              <p class="feature-text text-muted font9">Hassle-free returns within 30 days of purchase.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="2000">
+          <div class="feature-box d-flex justify-content-start align-items-start gap-4">
+            <div class="feature-icon"><img src="assets/images/support.png" alt="support" width="60px"></div>
+            <div>
+              <h5 class="feature-title mb-1 fw-semibold">24/7 Support</h5>
+              <p class="feature-text text-muted font9">We're here for you 24/7, anytime you need help.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+  <!-- features section ends here  -->
+
+
+  <!-- featured-categories section starts here  -->
+  <section class="featured-categories py-md-5">
+    <div class="container">
+      <div class="section-header text-center mb-5" data-aos="fade-up">
+        <h6 class="text-uppercase text-primary">Collections</h6>
+        <h2 class="section-title">Shop By Category</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+      <div class="row g-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="col-lg-12">
+          <owl-carousel-o [options]="customOptions" *ngIf="parentCategories.length">
+            <ng-template carouselSlide *ngFor="let cat of parentCategories">
+              <div class="category-card">
+                <div class="category-img">
+                  <img [src]="getImageUrl(cat.image_url)" alt="{{cat.name}}" class="img-fluid">
+                </div>
+                <div class="category-content">
+                  <h3>{{ cat.name }}</h3>
+                  <a class="btn-shop" [routerLink]="['/category']">Shop Now</a>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- featured-categories section ends here  -->
+
+  <app-new-arrival></app-new-arrival>
+
+  <!-- new arrival section ends here  -->
+
+  <!-- trending-products section starts here  -->
+  <section class="trending-products py-5">
+    <div class="container">
+      <div class="section-header text-center mb-4" data-aos="fade-up">
+        <h6 class="text-uppercase text-primary">What's New</h6>
+        <h2 class="section-title">Trending Products</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+      <ul class="nav nav-pills mb-5 justify-content-center align-items-center gap-3" id="pills-tab" role="tablist"
+        data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+        <li class="nav-item" role="presentation" *ngFor="let cat of parentCategories">
+          <button class="nav-link rounded-5 px-4" [class.active]="activeCategoryId === cat.id" type="button"
+            (click)="loadTrendingProducts(cat.id)">{{ cat.name }}</button>
+        </li>
+      </ul>
+      <div data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="1000">
+        <div class="row g-4">
+          <ng-container *ngIf="trendingProducts.length; else noTrending">
+            <div class="col-md-6 col-lg-3" *ngFor="let product of trendingProducts">
+              <div class="product-card">
+                <div class="product-img" style="cursor:pointer" [routerLink]="['/product', product.id]">
+                  <img
+                    [src]="product.images?.length ? getImageUrl(product.images[0].image_url) : 'assets/images/no-image.png'"
+                    [alt]="product.name" class="img-fluid" onerror="this.src='assets/images/no-image.png'">
+                  <span class="badge badge-sale" *ngIf="product.is_new_arrival">New</span>
+                  <span class="badge badge-sale" *ngIf="product.is_trending && !product.is_new_arrival">Trending</span>
+                  <div class="product-actions">
+                    <button class="action-btn" title="Add to Cart"><i class="bi bi-bag-plus"></i></button>
+                    <button class="action-btn" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
+                    <button class="action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
+                  </div>
+                </div>
+                <div class="product-content">
+                  <span class="product-category">{{ product.levelOneCategory?.name || 'General' }}</span>
+                  <h3 class="product-title">
+                    <a href="javascript:void(0)" [routerLink]="['/product', product.id]">{{ product.name }}</a>
+                  </h3>
+                  <div class="product-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
+                    <span class="rating-count">(4.2)</span>
+                  </div>
+                  <div class="product-price">
+                    <span class="current-price">&#8377;{{ product.price }}</span>
+                  </div>
+                  <!-- <div class="mt-2 d-flex justify-content-between align-items-center">
+
+                    <div class="product-colors">
+                      <div class="color-swatch active" title="red" style="background-color: red;">
+                      </div>
+                      <div class="color-swatch" title="green" style="background-color: green;"></div>
+                      <div class="color-swatch" title="yellow" style="background-color: yellow;">
+                      </div>
+                      <div class="color-swatch" title="pink" style="background-color: pink;"></div>
+                    </div>
+                    <div class="product-sizes">
+                      <div class="size-options active"> L</div>
+                      <div class="size-options"> M</div>
+                      <div class="size-options"> XL</div>
+                      <div class="size-options"> XXL</div>
+                    </div>
+
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <ng-template #noTrending>
+            <div class="col-12 text-center py-4 text-muted">
+              <i class="bi bi-fire fs-1 d-block mb-2"></i>
+              No trending products for this category.
+            </div>
+          </ng-template>
+        </div>
+      </div>
+
+
+      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+        <a href="javascript:void(0)" class="btn btn-outline-primary btn-lg" routerLink="/category">View All Products</a>
+      </div>
+    </div>
+  </section>
+  <!-- trending-products section ends here  -->
+
+  <!-- offer section starts here  -->
+  <section class="offer-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 mb-3">
+          <div class="offer-box" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+            <div class="offer-content">
+              <p class="fw-semibold">Get 40% Off</p>
+              <h2>Women’s New Collection</h2>
+              <a href="javascript:void(0)" class="btn-offer" routerLink="/category">Shop Now</a>
+            </div>
+            <img src="assets/images/offer1.webp" alt="img">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 mb-3">
+          <div class="offer-box" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
+            <div class="offer-content">
+              <p class="fw-semibold">Stay Upto Date</p>
+              <h2>Men's Trendy Fashion</h2>
+              <a href="javascript:void(0)" class="btn-offer" routerLink="/category">Shop Now</a>
+            </div>
+            <img src="assets/images/offer2.webp" alt="img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- offer section ends here  -->
+
+  <app-testimonials></app-testimonials>
+
+
+  <!-- blog section starts here  -->
+  <section class="blog-section py-5">
+    <div class="container">
+      <div class="section-header text-center mb-4" data-aos="fade-up">
+        <h6 class="text-uppercase text-primary">Where Style meets story</h6>
+        <h2 class="section-title">Our Blogs</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+      <div class="row g-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="col-lg-12">
+
+
+          <owl-carousel-o [options]="customOptions1">
+            <ng-template carouselSlide>
+              <div class="blog-card" routerLink="/blog-detail">
+                <div class="card-image">
+                  <img src="assets/images/blog/blog1.jpg" alt="Blog Post">
+                </div>
+                <div class="card-content">
+                  <span class="category">Trends</span>
+                  <h3 class="limit1">Spring 2024 Color Palette</h3>
+                  <p class="limit2">Explore the vibrant colors that will dominate this spring season.</p>
+                  <div class="card-author d-flex justify-content-start align-items-center gap-3">
+                    <img src="/assets/images/user.jpg" alt="Emma Wilson" class="author-avatar">
+                    <span class="author-name">Emma Wilson</span>
+                  </div>
+                  <div class="card-meta mt-3">
+                    <span><i class="bi bi-clock me-1"></i>March 12, 2024</span>
+                    <span>3 min read</span>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="blog-card" routerLink="/blog-detail">
+                <div class="card-image">
+                  <img src="assets/images/blog/blog2.jpg" alt="Blog Post">
+                </div>
+                <div class="card-content">
+                  <span class="category">Trends</span>
+                  <h3 class="limit1">Spring 2024 Color Palette</h3>
+                  <p class="limit2">Explore the vibrant colors that will dominate this spring season.</p>
+                  <div class="card-author d-flex justify-content-start align-items-center gap-3">
+                    <img src="/assets/images/user.jpg" alt="Emma Wilson" class="author-avatar">
+                    <span class="author-name">Emma Wilson</span>
+                  </div>
+                  <div class="card-meta mt-3">
+                    <span><i class="bi bi-clock me-1"></i>March 12, 2024</span>
+                    <span>3 min read</span>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="blog-card" routerLink="/blog-detail">
+                <div class="card-image">
+                  <img src="assets/images/blog/blog3.jpg" alt="Blog Post">
+                </div>
+                <div class="card-content">
+                  <span class="category">Trends</span>
+                  <h3 class="limit1">Spring 2024 Color Palette</h3>
+                  <p class="limit2">Explore the vibrant colors that will dominate this spring season.</p>
+                  <div class="card-author d-flex justify-content-start align-items-center gap-3">
+                    <img src="/assets/images/user.jpg" alt="Emma Wilson" class="author-avatar">
+                    <span class="author-name">Emma Wilson</span>
+                  </div>
+                  <div class="card-meta mt-3">
+                    <span><i class="bi bi-clock me-1"></i>March 12, 2024</span>
+                    <span>3 min read</span>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template carouselSlide>
+              <div class="blog-card" routerLink="/blog-detail">
+                <div class="card-image">
+                  <img src="assets/images/blog/blog4.jpg" alt="Blog Post">
+                </div>
+                <div class="card-content">
+                  <span class="category">Trends</span>
+                  <h3 class="limit1">Spring 2024 Color Palette</h3>
+                  <p class="limit2">Explore the vibrant colors that will dominate this spring season.</p>
+                  <div class="card-author d-flex justify-content-start align-items-center gap-3">
+                    <img src="/assets/images/user.jpg" alt="Emma Wilson" class="author-avatar">
+                    <span class="author-name">Emma Wilson</span>
+                  </div>
+                  <div class="card-meta mt-3">
+                    <span><i class="bi bi-clock me-1"></i>March 12, 2024</span>
+                    <span>3 min read</span>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- blog section ends here  -->
+
+
+  <!-- newsletter section starts here  -->
+  <section class="newsletter py-5" data-aos="fade-up" data-aos-delay="2000" data-aos-duration="1000">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="newsletter-content">
+              <h2>Subscribe to Our Newsletter</h2>
+              <p>Stay updated with our latest trends, new arrivals, and exclusive offers.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <form class="newsletter-form">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Enter your email address" name="email" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- newsletter section ends here  -->
+
+
+
+</main>
+
+<div class="modal fade" id="productview" tabindex="-1" aria-labelledby="productviewLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0 py-2">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-product-view [owlCarouselId]="'homepage'"></app-product-view>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

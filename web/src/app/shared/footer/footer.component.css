@@ -1,0 +1,115 @@
+.footer {
+  background-color: #222;
+  color: #aaa;
+}
+
+.footer-top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget-title {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.widget-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.footer-widget p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-left: 15px;
+}
+
+.footer-links a::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-color);
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.contact-item {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.contact-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-right: 15px;
+  margin-top: 3px;
+}
+
+.contact-item p {
+  margin-bottom: 0;
+}
+
+.footer-bottom {
+  background-color: #1a1a1a;
+}
+
+.copyright {
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .payment-methods {
+    text-align: left !important;
+    margin-top: 1rem;
+  }
+}

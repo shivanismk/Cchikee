@@ -1,0 +1,199 @@
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h3 class="card-title mb-0">Add New Product</h3>
+          <button type="button" class="btn btn-sm btn-light" (click)="onCancel()">
+            <i class="bi bi-arrow-left me-1"></i> Back
+          </button>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()" novalidate>
+
+            <!-- Product Name -->
+            <div class="mb-3">
+              <label class="form-label">Product Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" formControlName="name"
+                [class.is-invalid]="name?.invalid && submitted"
+                placeholder="Enter product name">
+              <div class="invalid-feedback" *ngIf="submitted">
+                <span *ngIf="name?.errors?.['required']">Product name is required.</span>
+                <span *ngIf="name?.errors?.['minlength']">Min 3 characters.</span>
+                <span *ngIf="name?.errors?.['maxlength']">Max 100 characters.</span>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+              <label class="form-label">Description <span class="text-danger">*</span></label>
+              <textarea class="form-control" rows="4" formControlName="description"
+                [class.is-invalid]="description?.invalid && submitted"
+                placeholder="Enter product description"></textarea>
+              <div class="invalid-feedback" *ngIf="submitted">
+                <span *ngIf="description?.errors?.['required']">Description is required.</span>
+                <span *ngIf="description?.errors?.['minlength']">Min 10 characters.</span>
+                <span *ngIf="description?.errors?.['maxlength']">Max 1000 characters.</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- Price -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Price (₹) <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text">₹</span>
+                  <input type="number" class="form-control" formControlName="price"
+                    min="0.01" step="0.01"
+                    [class.is-invalid]="price?.invalid && submitted"
+                    placeholder="0.00">
+                </div>
+                <div class="text-danger small mt-1" *ngIf="price?.invalid && submitted">
+                  <span *ngIf="price?.errors?.['required']">Price is required.</span>
+                  <span *ngIf="price?.errors?.['min']">Price must be greater than 0.</span>
+                </div>
+              </div>
+
+              <!-- Stock -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Stock <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" formControlName="stock" min="0"
+                  [class.is-invalid]="stock?.invalid && submitted"
+                  placeholder="0">
+                <div class="invalid-feedback" *ngIf="submitted">
+                  <span *ngIf="stock?.errors?.['required']">Stock is required.</span>
+                  <span *ngIf="stock?.errors?.['min']">Stock cannot be negative.</span>
+                  <span *ngIf="stock?.errors?.['max']">Stock cannot exceed 10000.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cascading Category -->
+            <div class="mb-1">
+              <label class="form-label">Category <span class="text-danger">*</span></label>
+            </div>
+            <div class="row g-2 mb-3">
+              <!-- Level 1 -->
+              <div class="col-md-4">
+                <select class="form-select"
+                  formControlName="level_one_category"
+                  [class.is-invalid]="productForm.get('level_one_category')?.invalid && submitted"
+                  (change)="onLevelOneChange($event)">
+                  <option value="" disabled selected>Select Type</option>
+                  <option *ngFor="let cat of levelOneCategories" [value]="cat.id">{{ cat.name }}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="submitted">Please select a type.</div>
+              </div>
+
+              <!-- Level 2 -->
+              <div class="col-md-4">
+                <select class="form-select"
+                  formControlName="level_two_category"
+                  [attr.disabled]="!levelTwoCategories.length ? true : null"
+                  (change)="onLevelTwoChange($event)">
+                  <option value="" disabled selected>Select Sub-Category</option>
+                  <option *ngFor="let cat of levelTwoCategories" [value]="cat.id">{{ cat.name }}</option>
+                </select>
+              </div>
+
+              <!-- Level 3 -->
+              <div class="col-md-4">
+                <select class="form-select"
+                  [class.is-invalid]="category_id?.invalid && submitted"
+                  [attr.disabled]="!levelThreeCategories.length ? true : null"
+                  (change)="onLevelThreeChange($event)">
+                  <option value="" disabled selected>Select Item</option>
+                  <option *ngFor="let cat of levelThreeCategories" [value]="cat.id">{{ cat.name }}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="submitted">Please select a category.</div>
+              </div>
+            </div>
+
+            <!-- Breadcrumb -->
+            <div class="mb-3" *ngIf="category_id?.value">
+              <small class="text-muted">
+                <i class="bi bi-tag me-1"></i>
+                <span *ngIf="selectedLevelOne">{{ selectedLevelOne.name }}</span>
+                <span *ngIf="selectedLevelTwo"> &rsaquo; {{ selectedLevelTwo.name }}</span>
+              </small>
+            </div>
+
+            <!-- ── Product Images ── -->
+            <div class="mb-4">
+              <label class="form-label">Product Images <span class="text-danger">*</span></label>
+
+              <!-- Drop zone / file chooser -->
+              <div class="image-upload-box border rounded p-3 text-center position-relative"
+                   [class.border-danger]="fileError && !selectedFiles.length">
+                <input type="file" id="productImages" class="file-input-hidden"
+                  accept="image/jpeg,image/png,image/webp,image/gif"
+                  multiple
+                  (change)="onFilesSelected($event)">
+                <label for="productImages" class="mb-0 w-100 cursor-pointer">
+                  <i class="bi bi-cloud-arrow-up fs-2 text-primary d-block mb-1"></i>
+                  <span class="fw-medium">Click to choose images</span>
+                  <small class="d-block text-muted mt-1">JPG, PNG, WEBP, GIF &nbsp;|&nbsp; Max 5 MB each &nbsp;|&nbsp; Multiple allowed</small>
+                </label>
+              </div>
+
+              <!-- File error -->
+              <div class="text-danger small mt-1" *ngIf="fileError">{{ fileError }}</div>
+
+              <!-- Previews -->
+              <div class="row g-2 mt-2" *ngIf="imagePreviews.length">
+                <div class="col-4 col-md-3 position-relative" *ngFor="let preview of imagePreviews; let i = index">
+                  <img [src]="preview" class="img-thumbnail w-100 preview-img" alt="preview">
+                  <button type="button" class="btn btn-danger btn-sm remove-img-btn"
+                    (click)="removeImage(i)" title="Remove">
+                    <i class="bi bi-x"></i>
+                  </button>
+                </div>
+              </div>
+
+              <small class="text-muted d-block mt-1" *ngIf="selectedFiles.length">
+                {{ selectedFiles.length }} file{{ selectedFiles.length > 1 ? 's' : '' }} selected
+              </small>
+            </div>
+
+            <!-- Active Status -->
+            <div class="mb-3 form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="is_active" formControlName="is_active">
+              <label class="form-check-label" for="is_active">Active Product</label>
+              <div class="form-text">Inactive products won't be shown to customers.</div>
+            </div>
+
+            <!-- New Arrival & Trending -->
+            <div class="mb-4 d-flex gap-4">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="is_new_arrival" formControlName="is_new_arrival">
+                <label class="form-check-label fw-medium" for="is_new_arrival">
+                  <i class="bi bi-stars me-1 text-success"></i> New Arrival
+                </label>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="is_trending" formControlName="is_trending">
+                <label class="form-check-label fw-medium" for="is_trending">
+                  <i class="bi bi-fire me-1 text-danger"></i> Trending
+                </label>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn btn-outline-secondary" (click)="onCancel()" [disabled]="isLoading">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary px-4" [disabled]="isLoading">
+                <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+                <span *ngIf="!isLoading"><i class="bi bi-plus-circle me-2"></i></span>
+                {{ isLoading ? 'Saving...' : 'Add Product' }}
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,296 @@
+<app-header></app-header>
+<app-breadcrumb></app-breadcrumb>
+
+<section class="main-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Progress Bar -->
+                <div class="checkout-progress" data-aos="fade-up" data-aos-delay="500">
+                    <div class="container">
+                        <div class="d-flex justify-content-between position-relative">
+                            <div class="progress-step">
+                                <div class="step-circle completed"><i class="bi bi-check-lg"></i></div>
+                                <div class="step-line completed"></div>
+                                <div class="step-label">Cart</div>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle"><div class="step-circle active pulse">2</div></div>
+                                <div class="step-line active"></div>
+                                <div class="step-label">Shipping</div>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle pending">3</div>
+                                <div class="step-line pending"></div>
+                                <div class="step-label">Payment</div>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle pending">4</div>
+                                <div class="step-label">Confirm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column - Forms -->
+                <div class="col-lg-7 col-xl-8">
+
+                    <!-- Shipping Information -->
+                    <div class="checkout-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-header-custom">
+                            <h4><i class="bi bi-truck me-2"></i>Shipping Information</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="First Name *"
+                                            [(ngModel)]="form.first_name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Last Name *"
+                                            [(ngModel)]="form.last_name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email *"
+                                    [(ngModel)]="form.email">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Phone Number *"
+                                    [(ngModel)]="form.phone">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Address *"
+                                    [(ngModel)]="form.address">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="City"
+                                            [(ngModel)]="form.city">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="State"
+                                            [(ngModel)]="form.state">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="ZIP Code"
+                                            [(ngModel)]="form.zip_code">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Options -->
+                    <div class="checkout-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-header-custom">
+                            <h4><i class="bi bi-clock me-2"></i>Delivery Options</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="delivery-options">
+                                <div class="delivery-option" [class.selected]="selectedPayment !== 'express' && selectedPayment !== 'nextday'">
+                                    <div class="delivery-info">
+                                        <div class="delivery-details">
+                                            <h6>Standard Delivery</h6>
+                                            <small>5-7 business days</small>
+                                        </div>
+                                        <div class="delivery-price">Free</div>
+                                    </div>
+                                </div>
+                                <div class="delivery-option">
+                                    <div class="delivery-info">
+                                        <div class="delivery-details">
+                                            <h6>Express Delivery</h6>
+                                            <small>2-3 business days</small>
+                                        </div>
+                                        <div class="delivery-price">₹9.99</div>
+                                    </div>
+                                </div>
+                                <div class="delivery-option">
+                                    <div class="delivery-info">
+                                        <div class="delivery-details">
+                                            <h6>Next Day Delivery</h6>
+                                            <small>1 business day</small>
+                                        </div>
+                                        <div class="delivery-price">₹19.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Information -->
+                    <div class="checkout-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-header-custom">
+                            <h4><i class="bi bi-credit-card me-2"></i>Payment Information</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="payment-methods">
+                                <div class="payment-option" [class.selected]="selectedPayment === 'credit_card'"
+                                    (click)="selectedPayment = 'credit_card'">
+                                    <div class="payment-icon"><i class="bi bi-credit-card"></i></div>
+                                    <div>Credit Card</div>
+                                </div>
+                                <div class="payment-option" [class.selected]="selectedPayment === 'debit_card'"
+                                    (click)="selectedPayment = 'debit_card'">
+                                    <div class="payment-icon"><i class="bi bi-credit-card"></i></div>
+                                    <div>Debit Card</div>
+                                </div>
+                                <div class="payment-option" [class.selected]="selectedPayment === 'google_pay'"
+                                    (click)="selectedPayment = 'google_pay'">
+                                    <div class="payment-icon"><i class="bi bi-google"></i></div>
+                                    <div>Google Pay</div>
+                                </div>
+                                <div class="payment-option" [class.selected]="selectedPayment === 'cod'"
+                                    (click)="selectedPayment = 'cod'">
+                                    <div class="payment-icon"><i class="bi bi-cash"></i></div>
+                                    <div>Cash On Delivery</div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3" *ngIf="selectedPayment === 'credit_card' || selectedPayment === 'debit_card'">
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Card Number">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Cardholder Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="MM/YY">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="CVV">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3" *ngIf="selectedPayment === 'cod'">
+                                <div class="col-lg-12">
+                                    <h6>Cash On Delivery</h6>
+                                    <ul>
+                                        <li class="font9 my-2">Pay when your order arrives at your door.</li>
+                                        <li class="font9 my-2">Available for orders under ₹5000.</li>
+                                        <li class="font9 my-2">Keep exact change ready for the delivery agent.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Order Summary -->
+                <div class="col-lg-5 col-xl-4">
+                    <div class="summary-section" data-aos="fade-left" data-aos-delay="500">
+                        <div class="summary-header">
+                            <div class="summary-icon"><i class="bi bi-receipt"></i></div>
+                            <h3 class="summary-title">Order Summary</h3>
+                        </div>
+
+                        <!-- Coupon -->
+                        <div class="coupon-box">
+                            <div class="coupon-title">
+                                <i class="bi bi-percent"></i>
+                                <span>Have a Coupon?</span>
+                            </div>
+                            <div class="coupon-input-group flex-wrap flex-xl-nowrap">
+                                <input type="text" class="coupon-input" placeholder="Enter coupon code">
+                                <button class="coupon-btn"><i class="bi bi-check2"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Loading -->
+                        <div class="text-center py-3" *ngIf="isLoading">
+                            <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+                        </div>
+
+                        <!-- Cart Items -->
+                        <ng-container *ngIf="!isLoading">
+                            <div class="order-detail" *ngFor="let item of cartItems">
+                                <img [src]="getImageUrl(item.product?.images?.[0]?.image_url || item.product?.image_url || '')"
+                                    [alt]="item.product?.name"
+                                    onerror="this.src='assets/images/no-image.png'">
+                                <div>
+                                    <h6>{{ item.product?.name }}</h6>
+                                    <p class="font9">Quantity: {{ item.quantity }}
+                                        <span *ngIf="item.size"> | Size: {{ item.size }}</span>
+                                    </p>
+                                </div>
+                                <h6 class="order-price">₹{{ ((item.product?.price || 0) * (item.quantity || 1)).toFixed(2) }}</h6>
+                            </div>
+
+                            <!-- Summary Details -->
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span class="summary-label">Subtotal ({{ cartItems.length }} items)</span>
+                                    <span class="summary-value">₹{{ subtotal.toFixed(2) }}</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Tax Rate (8.5%)</span>
+                                    <span class="summary-value">₹{{ tax.toFixed(2) }}</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Local Pickup</span>
+                                    <span class="summary-value">₹{{ PICKUP_FEE.toFixed(2) }}</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Free Shipping</span>
+                                    <span class="discount-value">-₹0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Discount Applied</span>
+                                    <span class="discount-value">-₹0.00</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span class="summary-label">Total</span>
+                                    <span class="summary-value">₹{{ total.toFixed(2) }}</span>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                        <button class="checkout-btn" (click)="placeOrder()" [disabled]="isPlacingOrder || isLoading">
+                            <span *ngIf="isPlacingOrder" class="spinner-border spinner-border-sm me-2"></span>
+                            <i class="bi bi-lock-fill me-2" *ngIf="!isPlacingOrder"></i>
+                            {{ isPlacingOrder ? 'Placing Order...' : 'Place Order' }}
+                        </button>
+
+                        <!-- Security Footer -->
+                        <div class="security-footer">
+                            <div class="security-badges">
+                                <div class="security-badge"><i class="bi bi-shield-check"></i><span>Secure</span></div>
+                                <div class="security-badge"><i class="bi bi-credit-card"></i><span>Safe Payment</span></div>
+                                <div class="security-badge"><i class="bi bi-truck"></i><span>Fast Delivery</span></div>
+                                <div class="security-badge"><i class="bi bi-arrow-return-left"></i><span>Easy Returns</span></div>
+                            </div>
+                            <small class="text-muted">256-bit SSL encryption</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,563 @@
+<app-header></app-header>
+
+<app-breadcrumb></app-breadcrumb>
+
+<section class="main-section">
+     <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="dashboard-container">
+                    <!-- Header -->
+                    <div class="dashboard-header">
+                        <div class="profile-img-container">
+                            <img src="assets/images/user.jpg" alt="Profile" class="profile-img" id="profileImage">
+                            <div class="upload-btn" onclick="document.getElementById('imageUpload').click()">
+                                <i class="bi bi-camera text-white"></i>
+                            </div>
+                            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                        </div>
+                        <h2 class="mb-1" id="userName">John Doe</h2>
+                        <!-- <p class="mb-0 opacity-75">Premium Member</p> -->
+                    </div>
+
+                    <!-- Navigation Tabs -->
+                    <div class="p-4">
+                        <ul class="nav nav-pills justify-content-center mb-4" id="dashboardTabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="pill" href="#overview">
+                                    <i class="bi bi-house-door me-2"></i>Overview
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="pill" href="#profile">
+                                    <i class="bi bi-person me-2"></i>Profile
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="pill" href="#orders">
+                                    <i class="bi bi-box me-2"></i>Orders
+                                </a>
+                            </li>
+                              <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="pill" href="#reviews">
+                                    <i class="bi bi-star me-2"></i>Reviews
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="pill" href="#settings">
+                                    <i class="bi bi-gear me-2"></i>Settings
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab Content -->
+                        <div class="tab-content">
+                            <!-- Overview Tab -->
+                            <div class="tab-pane fade show active" id="overview">
+                                <div class="welcome-message">
+                                    <h4><i class="bi bi-emoji-smile me-2"></i>Welcome back, <span id="welcomeName">John</span>!</h4>
+                                    <p class="mb-0">Here's what's happening with your account today.</p>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-md-3 col-6 mb-3">
+                                        <div class="stats-card">
+                                            <div class="stats-number">12</div>
+                                            <div>Total Orders</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 mb-3">
+                                        <div class="stats-card">
+                                            <div class="stats-number">3</div>
+                                            <div>Pending</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 mb-3">
+                                        <div class="stats-card">
+                                            <div class="stats-number">8</div>
+                                            <div>Delivered</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 mb-3">
+                                        <div class="stats-card">
+                                            <div class="stats-number">₹1,234</div>
+                                            <div>Total Spent</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="bi bi-clock-history me-2"></i>Recent Activity
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="order-timeline">
+                                            <div class="timeline-item">
+                                                <h6>Order #ORD-2024-001 Delivered</h6>
+                                                <small class="text-muted">2 hours ago</small>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <h6>Order #ORD-2024-002 Shipped</h6>
+                                                <small class="text-muted">1 day ago</small>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <h6>Order Delivered</h6>
+                                                <small class="text-muted">3 days ago</small>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Profile Tab -->
+                            <div class="tab-pane fade" id="profile">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="bi bi-person-circle me-2"></i>Personal Information
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="profileForm">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastName"  placeholder="Last Name">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label">Email</label>
+                                                    <input type="email" class="form-control" id="email"  placeholder="johndoe@gmail.com">
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label">Phone Number</label>
+                                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Address</label>
+                                                <input type="text" class="form-control" id="address" placeholder="Address">
+                                            </div>
+                                            <div class="row">
+                                               
+                                                <div class="col-md-4 mb-3">
+                                                    <label class="form-label">State</label>
+                                                   <select name="" id="" class="form-control">
+                                                    <option value="" selected>State</option>
+                                                    <option value="" >Delhi</option>
+                                                    <option value="" >Noida</option>
+                                                    <option value="" >Uttar Pardesh</option>
+                                                   </select>
+                                                </div>
+                                                 <div class="col-md-4 mb-3">
+                                                    <label class="form-label">City</label>
+                                                     <select name="" id="" class="form-control">
+                                                    <option value="" selected>City</option>
+                                                    <option value="" >Delhi</option>
+                                                    <option value="" >New Delhi</option>
+                                                   </select>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <label class="form-label">ZIP Code</label>
+                                                    <input type="text" class="form-control" id="zipCode" placeholder="ZIP Code">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Date of Birth</label>
+                                                <input type="date" class="form-control" id="dob">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="bi bi-check-circle me-2"></i>Update Profile
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Orders Tab -->
+                            <div class="tab-pane fade" id="orders">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <span><i class="bi bi-box-seam me-2"></i>Order History</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Order 1 -->
+                                        <div class="card order-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                                    <div>
+                                                        <h6 class="mb-1">Order #ORD-2024-001</h6>
+                                                        <small class="text-muted">Placed on March 15, 2024</small>
+                                                    </div>
+                                                    <span class="badge status-delivered">Delivered</span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <p class="mb-1"><strong>Items:</strong> Wireless Headphones, Phone Case</p>
+                                                        <p class="mb-1"><strong>Total:</strong> ₹129.99</p>
+                                                    </div>
+                                                    <div class="col-md-4 text-end">
+                                                        <button class="btn btn-primary btn-sm">Reorder</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Order 2 -->
+                                        <div class="card order-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                                    <div>
+                                                        <h6 class="mb-1">Order #ORD-2024-002</h6>
+                                                        <small class="text-muted">Placed on March 20, 2024</small>
+                                                    </div>
+                                                    <span class="badge status-shipped">Shipped</span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <p class="mb-1"><strong>Items:</strong> Laptop Stand, USB Cable</p>
+                                                        <p class="mb-1"><strong>Total:</strong> ₹79.99</p>
+                                                        <p class="mb-1"><strong>Tracking:</strong> TRK123456789</p>
+                                                    </div>
+                                                    <div class="col-md-4 text-end">
+                                                       <button class="btn btn-outline-danger btn-md">Cancel</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Order 3 -->
+                                        <div class="card order-card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                                    <div>
+                                                        <h6 class="mb-1">Order #ORD-2024-003</h6>
+                                                        <small class="text-muted">Placed on March 22, 2024</small>
+                                                    </div>
+                                                    <span class="badge status-processing">Processing</span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <p class="mb-1"><strong>Items:</strong> Gaming Mouse, Mousepad</p>
+                                                        <p class="mb-1"><strong>Total:</strong> ₹59.99</p>
+                                                    </div>
+                                                    <div class="col-md-4 text-end">
+                                                        <button class="btn btn-outline-danger btn-md">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                             <!-- Reviews Tab -->
+                            <div class="tab-pane fade" id="reviews">
+                                <div class="row">
+                                    <!-- Submit Review Section -->
+                                    <div class="col-lg-12 mb-4">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="bi bi-pencil-square me-2"></i>Write a Review
+                                            </div>
+                                            <div class="card-body">
+                                                <form id="reviewForm">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Select Product</label>
+                                                        <select class="form-control" id="productSelect" required>
+                                                            <option value="">Choose a product to review...</option>
+                                                            <option value="Floral Summer Dress">Floral Summer Dress</option>
+                                                            <option value="Slim Fit Casual Shirt">Slim Fit Casual Shirt</option>
+                                                            <option value="Leather Crossbody Bag">Leather Crossbody Bag</option>
+                                                        </select>
+                                                    </div>
+                                                    
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Rating</label>
+                                                        <div class="rating-stars mb-2" id="ratingStars">
+                                                            <i class="bi bi-star-fill rating-star active" data-rating="1"></i>
+                                                            <i class="bi bi-star-fill rating-star active" data-rating="2"></i>
+                                                            <i class="bi bi-star-fill rating-star active" data-rating="3"></i>
+                                                            <i class="bi bi-star-fill rating-star active" data-rating="4"></i>
+                                                            <i class="bi bi-star-fill rating-star" data-rating="5"></i>
+                                                        </div>
+                                                        <small class="text-muted">Click on stars to rate</small>
+                                                        <input type="hidden" id="selectedRating" value="0">
+                                                    </div>
+                                                    
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Review Title</label>
+                                                        <input type="text" class="form-control" id="reviewTitle" placeholder="Summarize your experience" required>
+                                                    </div>
+                                                    
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Your Review</label>
+                                                        <textarea class="form-control" id="reviewText" rows="4" placeholder="Share your thoughts about this product..." required></textarea>
+                                                        <div class="form-text">Minimum 20 characters</div>
+                                                    </div>
+                                                    
+                                                    <div class="mb-3">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="recommendProduct">
+                                                            <label class="form-check-label" for="recommendProduct">
+                                                                I would recommend this product to others
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Upload Photos (Optional)</label>
+                                                        <input type="file" class="form-control" id="reviewPhotos" multiple accept="image/*">
+                                                        <div class="form-text">You can upload up to 5 photos</div>
+                                                    </div>
+                                                    
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <i class="bi bi-send me-2"></i>Submit Review
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- My Reviews Section -->
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between align-items-center">
+                                                <span><i class="bi bi-chat-quote me-2"></i>My Reviews</span>
+                                                <span class="badge bg-primary">3 Reviews</span>
+                                            </div>
+                                            <div class="card-body">
+                                                <!-- Review 1 -->
+                                                <div class="review-item border-bottom pb-3 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                                        <div>
+                                                            <h6 class="mb-1">Floral Summer Dress</h6>
+                                                            <div class="rating-display mb-1">
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <span class="ms-1 small text-muted">5.0</span>
+                                                            </div>
+                                                        </div>
+                                                        <small class="text-muted">March 16, 2024</small>
+                                                    </div>
+                                                    <h6 class="review-title">Excellent Quality!</h6>
+                                                    <p class="mb-2 text-muted small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tenetur tempora et enim, quae nihil ipsum maxime accusamus natus! Sapiente amet rem facilis aliquid quibusdam quaerat fugit asperiores ratione cumque!</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="badge bg-success small">Recommended</span>
+                                                        <div>
+                                                            <button class="btn btn-outline-primary btn-sm me-1">Edit</button>
+                                                            <button class="btn btn-outline-danger btn-sm">Delete</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Review 2 -->
+                                               <div class="review-item border-bottom pb-3 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                                        <div>
+                                                            <h6 class="mb-1">Floral Summer Dress</h6>
+                                                            <div class="rating-display mb-1">
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <span class="ms-1 small text-muted">5.0</span>
+                                                            </div>
+                                                        </div>
+                                                        <small class="text-muted">March 16, 2024</small>
+                                                    </div>
+                                                    <h6 class="review-title">Excellent Quality!</h6>
+                                                    <p class="mb-2 text-muted small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tenetur tempora et enim, quae nihil ipsum maxime accusamus natus! Sapiente amet rem facilis aliquid quibusdam quaerat fugit asperiores ratione cumque!</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="badge bg-success small">Recommended</span>
+                                                        <div>
+                                                            <button class="btn btn-outline-primary btn-sm me-1">Edit</button>
+                                                            <button class="btn btn-outline-danger btn-sm">Delete</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Review 3 -->
+                                                 <div class="review-item border-bottom pb-3 mb-3">
+                                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                                        <div>
+                                                            <h6 class="mb-1">Floral Summer Dress</h6>
+                                                            <div class="rating-display mb-1">
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <i class="bi bi-star-fill text-warning"></i>
+                                                                <span class="ms-1 small text-muted">5.0</span>
+                                                            </div>
+                                                        </div>
+                                                        <small class="text-muted">March 16, 2024</small>
+                                                    </div>
+                                                    <h6 class="review-title">Excellent Quality!</h6>
+                                                    <p class="mb-2 text-muted small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tenetur tempora et enim, quae nihil ipsum maxime accusamus natus! Sapiente amet rem facilis aliquid quibusdam quaerat fugit asperiores ratione cumque!</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="badge bg-secondary small">Not Recommended</span>
+                                                        <div>
+                                                            <button class="btn btn-outline-primary btn-sm me-1">Edit</button>
+                                                            <button class="btn btn-outline-danger btn-sm">Delete</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Settings Tab -->
+                            <div class="tab-pane fade" id="settings">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="card h-100 mb-0">
+                                            <div class="card-header">
+                                                <i class="bi bi-envelope me-2"></i>Email Settings
+                                            </div>
+                                            <div class="card-body">
+                                                <form id="emailForm">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Current Email</label>
+                                                        <input type="email" class="form-control" id="currentEmail" placeholder="john.doe@example.com" readonly>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">New Email</label>
+                                                        <input type="email" class="form-control" id="newEmail" placeholder="Enter new email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Confirm Password</label>
+                                                        <input type="password" class="form-control" id="emailPassword" placeholder="Enter password">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <i class="bi bi-envelope-check me-2"></i>Update Email
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <div class="card h-100 mb-0">
+                                            <div class="card-header">
+                                                <i class="bi bi-phone me-2"></i>Phone Settings
+                                            </div>
+                                            <div class="card-body">
+                                                <form id="phoneForm">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Current Phone</label>
+                                                        <input type="tel" class="form-control" id="currentPhone" placeholder="9876543210" readonly>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">New Phone Number</label>
+                                                        <input type="tel" class="form-control" id="newPhone" placeholder="Enter new phone number">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary mb-3">
+                                                        <i class="bi bi-phone me-2"></i>Update Phone
+                                                    </button>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Verification Code</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="verificationCode" placeholder="Enter code">
+                                                            <button class="btn btn-primary" type="button" >Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card mt-4">
+                                    <div class="card-header">
+                                        <i class="bi bi-shield-lock me-2"></i>Password & Security
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="passwordForm">
+                                            <div class="row">
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="position-relative">
+                                                        <label class="form-label">Current Password</label>
+                                                        <input type="password" class="form-control" id="currentPassword" placeholder="Current Password">
+                                                        <button type="button" class="password-toggle"><i class="bi-eye-slash"></i></button>
+                                                        <!-- <button type="button" class="password-toggle"><i class="bi-eye"></i></button> -->
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                     <div class="position-relative">
+                                                    <label class="form-label">New Password</label>
+                                                    <input type="password" class="form-control" id="newPassword" placeholder="New Password">
+                                                       <button type="button" class="password-toggle"><i class="bi-eye-slash"></i></button>
+                                                        <!-- <button type="button" class="password-toggle"><i class="bi-eye"></i></button> -->
+                                                         </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                     <div class="position-relative">
+                                                    <label class="form-label">Confirm New Password</label>
+                                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                                                       <button type="button" class="password-toggle"><i class="bi-eye-slash"></i></button>
+                                                        <!-- <button type="button" class="password-toggle"><i class="bi-eye"></i></button> -->
+                                                     </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="bi bi-key me-2"></i>Change Password
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+</section>
+
+<app-footer></app-footer>
+
+   <!-- Track Order Modal -->
+    <div class="modal fade" id="trackOrderModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-search me-2"></i>Track Your Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Order Number</label>
+                            <input type="text" class="form-control" placeholder="Enter order number (e.g., ORD-2024-001)">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="Enter email address">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Track Order</button>
+                </div>
+            </div>
+        </div>
+    </div>

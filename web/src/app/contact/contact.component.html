@@ -1,0 +1,159 @@
+<app-header></app-header>
+
+<app-breadcrumb></app-breadcrumb>
+
+<section class="main-section">
+    
+    <div class="contact-hero py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <h1 class="display-4">Let's Start a Conversation</h1>
+                        <p class="lead">We'd love to hear from you. Our team is always ready to connect and assist with
+                            any questions or feedback.</p>
+                        <div class="contact-badges">
+                            <div class="contact-badge">
+                                <i class="bi bi-headset"></i>
+                                <span>24/7 Support</span>
+                            </div>
+                            <div class="contact-badge">
+                                <i class="bi bi-clock"></i>
+                                <span>Fast Response</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image">
+                        <img src="assets/images/contact.jpg" alt="Contact Us" class="img-fluid">
+                        <div class="floating-bubble bubble-1">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div class="floating-bubble bubble-2">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div class="floating-bubble bubble-3">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Options Section -->
+    <div class="contact-options py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h6 class="text-uppercase theme-text">Reach Out</h6>
+                <h2 class="section-title">Multiple Ways to Connect</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <p>123 Fashion Street<br>Style District, NY 10001<br>United States</p>
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-primary btn-sm">Get
+                            Directions</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="bi bi-envelope-open"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>General Inquiries:<br><a href="mailto:hello@stylehub.com">hello&#64;stylehub.com</a></p>
+                        <p>Customer Support:<br><a href="mailto:support@stylehub.com">support&#64;stylehub.com</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-card">
+                        <div class="card-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>Customer Service:<br><a href="tel:+18001234567">+1 (800) 123-4567</a></p>
+                        <p>Business Hours:<br>Mon-Fri: 9AM - 6PM EST</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Form Section -->
+    <div class="contact-form-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="map-container" >
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14010.762569808738!2d77.2226051524486!3d28.609056060837403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2db961be393%3A0xf6c7ef5ee6dd10ae!2sIndia%20Gate%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1748024538680!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="form-wrapper">
+                        <div class="form-header">
+                            <h2>Send Us a Message</h2>
+                            <p>We'll get back to you as soon as possible</p>
+                        </div>
+
+                        <form id="contactForm" class="contact-form">
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="subjectSelect" class="form-label">Subject</label>
+                                <select class="form-select" id="subjectSelect">
+                                    <option selected disabled value="">Select a topic</option>
+                                    <option value="order">Order Inquiry</option>
+                                    <option value="product">Product Information</option>
+                                    <option value="return">Returns & Exchanges</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="messageInput" class="form-label">Your Message</label>
+                                <textarea class="form-control" id="messageInput" rows="5"
+                                    placeholder="Type your message here..."></textarea>
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="newsletterCheck">
+                                <label class="form-check-label" for="newsletterCheck">
+                                    Subscribe to our newsletter for exclusive offers and updates
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-send"></i> Send Message
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

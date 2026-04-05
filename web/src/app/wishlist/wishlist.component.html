@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+<app-breadcrumb></app-breadcrumb>
+
+<section class="main-section py-5">
+    <div class="container">
+        <!-- Header -->
+        <div class="cart-header" data-aos="fade-up" data-aos-delay="500">
+            <h1 class="cart-title">
+                <i class="bi bi-heart-fill me-3"></i>
+                Your Wishlist
+            </h1>
+        </div>
+
+        <!-- Loading -->
+        <div class="text-center py-5" *ngIf="isLoading">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p class="mt-2 text-muted">Loading wishlist...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div class="text-center py-5" *ngIf="!isLoading && wishlistItems.length === 0">
+            <i class="bi bi-heart fs-1 text-muted"></i>
+            <p class="mt-3 text-muted fs-5">Your wishlist is empty.</p>
+            <a routerLink="/" class="btn btn-primary mt-2">Continue Shopping</a>
+        </div>
+
+        <div class="cart-layout" *ngIf="!isLoading && wishlistItems.length > 0">
+            <!-- Wishlist Items Section -->
+            <div class="cart-section" data-aos="fade-up" data-aos-delay="500">
+                <div class="section-title">
+                    <i class="bi bi-heart-fill"></i>
+                    <span>Wishlist Items ({{ wishlistItems.length }})</span>
+                </div>
+
+                <div class="product-card" *ngFor="let item of wishlistItems">
+                    <div class="product-row">
+                        <div class="product-image" [routerLink]="['/product', item.product?.id || item.product_id]" style="cursor:pointer">
+                            <img [src]="getImageUrl(item.product?.images?.[0]?.image_url || item.product?.image_url || '')"
+                                [alt]="item.product?.name || 'Product'"
+                                class="product-img"
+                                onerror="this.src='assets/images/no-image.png'">
+                        </div>
+
+                        <div class="product-details" [routerLink]="['/product', item.product?.id || item.product_id]" style="cursor:pointer">
+                            <h5>{{ item.product?.name || 'Product' }}</h5>
+                            <p class="limit2">{{ item.product?.description }}</p>
+                            <div class="product-price">₹{{ item.product?.price }}</div>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center flex-column gap-3">
+                            <button class="btn btn-primary btn-md w-100" (click)="moveToCart(item)">
+                                <i class="bi bi-bag me-1"></i> Add to Cart
+                            </button>
+                            <button class="btn btn-outline-dark btn-md w-100" (click)="removeFromWishlist(item)">
+                                <i class="bi bi-trash me-1"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>
